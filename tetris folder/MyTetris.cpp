@@ -1,48 +1,48 @@
-// ¸®¼Ò½º¸¦ »ç¿ëÇÏ±â À§ÇØ¼­ resource.h ÆÄÀÏÀ» includeÇØ ÁÖ¾î¾ß ÇÑ´Ù.
+ï»¿// ë¦¬ì†ŒìŠ¤ë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œ resource.h íŒŒì¼ì„ includeí•´ ì£¼ì–´ì•¼ í•œë‹¤.
 #include "resource.h"
-// API ÇÔ¼öµéÀ» »ç¿ëÇÏ·Á¸é windows.h ÆÄÀÏÀ» includeÇØ ÁÖ¾î¾ß ÇÑ´Ù.
+// API í•¨ìˆ˜ë“¤ì„ ì‚¬ìš©í•˜ë ¤ë©´ windows.h íŒŒì¼ì„ includeí•´ ì£¼ì–´ì•¼ í•œë‹¤.
 #include <windows.h>
-// C ¾ð¾î¿¡¼­ ÀÚÁÖ »ç¿ëÇÏ¿´´ø Ç¥ÁØ ÀÔÃâ·Â Çì´õ Ãß°¡
+// C ì–¸ì–´ì—ì„œ ìžì£¼ ì‚¬ìš©í•˜ì˜€ë˜ í‘œì¤€ ìž…ì¶œë ¥ í—¤ë” ì¶”ê°€
 #include <stdio.h>
 
-// °¢Á¾ ÀüÃ³¸®±â ¸ÅÅ©·Î ¼±¾ð
-// »õ·Î¿î ºí·ÏÀ» Ãâ·Â
+// ê°ì¢… ì „ì²˜ë¦¬ê¸° ë§¤í¬ë¡œ ì„ ì–¸
+// ìƒˆë¡œìš´ ë¸”ë¡ì„ ì¶œë ¥
 /*
-	À©µµ¿ì ½Ã½ºÅÛÀº, ¸Þ½ÃÁö±¸µ¿ ½Ã½ºÅÛÀÌ´Ù.
-	¸ðµç ÀÌº¥Æ®´Â ¸Þ¼¼ÁöÀÇ ¹ß»ý¿¡ ÀÇÇØ¼­ Ã³¸®µÈ´Ù.
+	ìœˆë„ìš° ì‹œìŠ¤í…œì€, ë©”ì‹œì§€êµ¬ë™ ì‹œìŠ¤í…œì´ë‹¤.
+	ëª¨ë“  ì´ë²¤íŠ¸ëŠ” ë©”ì„¸ì§€ì˜ ë°œìƒì— ì˜í•´ì„œ ì²˜ë¦¬ëœë‹¤.
 
-	¸®½ºÆ®¹Ú½º À©µµ¿ì, ÄÞº¸¹Ú½ºÀ©µµ¿ìµî ¸ðµç ÀÌ·± °¢°¢ÀÇ À©µµ¿ìµéÀº ³»ºÎÀû
-	¸Þ½ÃÁöÃ³¸®¿¡ÀÇÇØ ¿øÇÏ´Â µ¿ÀÛÀ» ÇÏ°Ô µÇ´Âµ¥, ÀÌ·± ¸Þ½ÃÁö¿Ü¿¡ »ç¿ëÀÚ
-	Á¤ÀÇ ¸Þ½ÃÁö°¡ ÇÊ¿äÇÒ¶§°¡ ¸¹´Ù. ¿¹¸¦µé¾î, ÄÞº¸¿¡ °ªÀÌ º¯°æµÉ¶§, ºÎ¸ð¿¡°Ô »Ó
-	¾Æ´Ï¶ó, ´Ù¸¥°÷¿¡µµ ¾Ë·ÁÁÙ ÇÊ¿ä°¡ ÀÖ°Å³ª ÇÒ¶§...
+	ë¦¬ìŠ¤íŠ¸ë°•ìŠ¤ ìœˆë„ìš°, ì½¤ë³´ë°•ìŠ¤ìœˆë„ìš°ë“± ëª¨ë“  ì´ëŸ° ê°ê°ì˜ ìœˆë„ìš°ë“¤ì€ ë‚´ë¶€ì 
+	ë©”ì‹œì§€ì²˜ë¦¬ì—ì˜í•´ ì›í•˜ëŠ” ë™ìž‘ì„ í•˜ê²Œ ë˜ëŠ”ë°, ì´ëŸ° ë©”ì‹œì§€ì™¸ì— ì‚¬ìš©ìž
+	ì •ì˜ ë©”ì‹œì§€ê°€ í•„ìš”í• ë•Œê°€ ë§Žë‹¤. ì˜ˆë¥¼ë“¤ì–´, ì½¤ë³´ì— ê°’ì´ ë³€ê²½ë ë•Œ, ë¶€ëª¨ì—ê²Œ ë¿
+	ì•„ë‹ˆë¼, ë‹¤ë¥¸ê³³ì—ë„ ì•Œë ¤ì¤„ í•„ìš”ê°€ ìžˆê±°ë‚˜ í• ë•Œ...
 
-	±×·¯¸é, ´ÙÀ½°ú °°ÀÌ ¸Þ½ÃÁöÀÇ °ªÀ» ¾Æ¹«·¸°Ô³ª Á¤ÀÇÇØ¼­ »ç¿ëÇÒ¼ø ¾ø´Ù.
+	ê·¸ëŸ¬ë©´, ë‹¤ìŒê³¼ ê°™ì´ ë©”ì‹œì§€ì˜ ê°’ì„ ì•„ë¬´ë ‡ê²Œë‚˜ ì •ì˜í•´ì„œ ì‚¬ìš©í• ìˆœ ì—†ë‹¤.
 
 	#define WM_NewBlock 100
-	Ã³·³, ÀÌ·±½ÄÀ¸·Î ¼±¾ðÇÑ´Ù¸é, ÀÌ¹Ì 100ÀÌ¶ó´Â °ªÀº ½Ã½ºÅÛÀÌ ³»ºÎÀûÀ¸·Î
-	¿¹¾àÇØ¼­ »ç¿ëÇÏ´Â ¸Þ½ÃÁö »ó¼öÀÏ ¼ö°¡ ÀÖ´Ù.
+	ì²˜ëŸ¼, ì´ëŸ°ì‹ìœ¼ë¡œ ì„ ì–¸í•œë‹¤ë©´, ì´ë¯¸ 100ì´ë¼ëŠ” ê°’ì€ ì‹œìŠ¤í…œì´ ë‚´ë¶€ì ìœ¼ë¡œ
+	ì˜ˆì•½í•´ì„œ ì‚¬ìš©í•˜ëŠ” ë©”ì‹œì§€ ìƒìˆ˜ì¼ ìˆ˜ê°€ ìžˆë‹¤.
 
-	±×·¡¼­, »ç¿ëÀÚ°¡ »ç¿ëÇØµµ µÇ´Â ±¸¿ªÀ» ¸¸µé¾îµ×´Âµ¥ ±×°Ô
-	0x400 °ªºÎÅÍ , 0x7FFF ±îÁö ÀÌ´Ù. ¿©±â¼­ 0x400 ÀÌ WM_USER ·Î ¼±¾ðµÇÀÖÀ½
+	ê·¸ëž˜ì„œ, ì‚¬ìš©ìžê°€ ì‚¬ìš©í•´ë„ ë˜ëŠ” êµ¬ì—­ì„ ë§Œë“¤ì–´ë’€ëŠ”ë° ê·¸ê²Œ
+	0x400 ê°’ë¶€í„° , 0x7FFF ê¹Œì§€ ì´ë‹¤. ì—¬ê¸°ì„œ 0x400 ì´ WM_USER ë¡œ ì„ ì–¸ë˜ìžˆìŒ
 
-	Âü°í·Î, ---------------------------------------------
-	0 - 0x400 : ½Ã½ºÅÛ ¿¹¾à
-	0x401 - 0x7FFF : WM_USER¸Þ¼¼Áö¿ëÀ¸·Î »ç¿ëÇÏ°Ô ¸¸µç ±¸¿ª
-	0x8000 - 0xBFFF : ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ÀüÃ¼ ¸Þ¼¼Áö È£È¯ ±¸¿ª
-	±âÅ¸...
+	ì°¸ê³ ë¡œ, ---------------------------------------------
+	0 - 0x400 : ì‹œìŠ¤í…œ ì˜ˆì•½
+	0x401 - 0x7FFF : WM_USERë©”ì„¸ì§€ìš©ìœ¼ë¡œ ì‚¬ìš©í•˜ê²Œ ë§Œë“  êµ¬ì—­
+	0x8000 - 0xBFFF : ì• í”Œë¦¬ì¼€ì´ì…˜ ì „ì²´ ë©”ì„¸ì§€ í˜¸í™˜ êµ¬ì—­
+	ê¸°íƒ€...
 	-----------------------------------------------------
 
-	¿ì¼± ´Ù¸¥ ±¸¿ª±îÁö »ý°¢ÇÏ¸é ¸Ó¸®¾ÆÇÁ´Ï±î ¿ì¼±Àº ÀÌ·¸´Ù´Â°Í¸¸ ¾Ë¾ÆµÎÀÚ.
+	ìš°ì„  ë‹¤ë¥¸ êµ¬ì—­ê¹Œì§€ ìƒê°í•˜ë©´ ë¨¸ë¦¬ì•„í”„ë‹ˆê¹Œ ìš°ì„ ì€ ì´ë ‡ë‹¤ëŠ”ê²ƒë§Œ ì•Œì•„ë‘ìž.
 
-	±×¸®°í, WM_USER+1¿¡¼­ 1À» ´õÇÏ´Â°ÍÀº WM_USER°¡ 0x400ÀÌ´Ï±î ÀÌ °ª±îÁö°¡
-	½Ã½ºÅÛÀÌ »ç¿ëÇÏ´Ï±î, 1À» ´õÇØÁà¼­ 0x401 - 0x7FFF±îÁö°¡ ¸¾´ë·Î »ç¿ëÇØµµ µÇ´Â
-	°Å´Ù.
+	ê·¸ë¦¬ê³ , WM_USER+1ì—ì„œ 1ì„ ë”í•˜ëŠ”ê²ƒì€ WM_USERê°€ 0x400ì´ë‹ˆê¹Œ ì´ ê°’ê¹Œì§€ê°€
+	ì‹œìŠ¤í…œì´ ì‚¬ìš©í•˜ë‹ˆê¹Œ, 1ì„ ë”í•´ì¤˜ì„œ 0x401 - 0x7FFFê¹Œì§€ê°€ ë§˜ëŒ€ë¡œ ì‚¬ìš©í•´ë„ ë˜ëŠ”
+	ê±°ë‹¤.
 
-	(Á¤¸®) ÇÁ·Î±×·¡¸ÓÀÇ ÇÊ¿ä¿¡ µû¶ó ½º½º·Î Á¤ÀÇÇØ¼­ »ç¿ëÇÒ ¼ö ÀÖ´Â ¸Þ½ÃÁöÀÌ´Ù.
-	WM_USER ºÎÅÍ´Â À©µµ¿ì¿¡¼­ »ç¿ëÇÏ´Â ±¸°£ÀÌ ¾Æ´Ï¹Ç·Î ÇÊ¿äÇÑ °¹¼ö¸¸Å­ +n ÇØ°¡¸é¼­
-	¿©·¯°³ÀÇ ¸Þ½ÃÁö¸¦ Á¤ÀÇÇØ¼­ ¾µ ¼ö ÀÖ´Ù. ¹°·Ð À©µµ¿ì°¡ Á¤ÀÇÇÑ ¸Þ½ÃÁö°¡ ¾Æ´Ï°í,
-	ÇÁ·Î±×·¡¸Ó°¡ Á¤ÀÇÇÑ ¸Þ½ÃÁöÀÌ¹Ç·Î, ±× ¸Þ½ÃÁö¸¦ ¹ß»ý½ÃÅ°´Â°Íµµ ±× ¸Þ½ÃÁö¸¦ Ã³¸®ÇÏ´Â°Íµµ
-	¸ðµÎ ÇÁ·Î±×·¡¸ÓÀÇ Ã¥ÀÓ.
+	(ì •ë¦¬) í”„ë¡œê·¸ëž˜ë¨¸ì˜ í•„ìš”ì— ë”°ë¼ ìŠ¤ìŠ¤ë¡œ ì •ì˜í•´ì„œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ë©”ì‹œì§€ì´ë‹¤.
+	WM_USER ë¶€í„°ëŠ” ìœˆë„ìš°ì—ì„œ ì‚¬ìš©í•˜ëŠ” êµ¬ê°„ì´ ì•„ë‹ˆë¯€ë¡œ í•„ìš”í•œ ê°¯ìˆ˜ë§Œí¼ +n í•´ê°€ë©´ì„œ
+	ì—¬ëŸ¬ê°œì˜ ë©”ì‹œì§€ë¥¼ ì •ì˜í•´ì„œ ì“¸ ìˆ˜ ìžˆë‹¤. ë¬¼ë¡  ìœˆë„ìš°ê°€ ì •ì˜í•œ ë©”ì‹œì§€ê°€ ì•„ë‹ˆê³ ,
+	í”„ë¡œê·¸ëž˜ë¨¸ê°€ ì •ì˜í•œ ë©”ì‹œì§€ì´ë¯€ë¡œ, ê·¸ ë©”ì‹œì§€ë¥¼ ë°œìƒì‹œí‚¤ëŠ”ê²ƒë„ ê·¸ ë©”ì‹œì§€ë¥¼ ì²˜ë¦¬í•˜ëŠ”ê²ƒë„
+	ëª¨ë‘ í”„ë¡œê·¸ëž˜ë¨¸ì˜ ì±…ìž„.
 */
 #define WM_NewBlock WM_USER + 1
 
@@ -55,16 +55,16 @@
 #define ALIVE 1
 #define DEAD 0
 
-// Å×Æ®¸¯½º ºí·ÏÀ» À§ÇÑ 4Â÷¿ø ¹è¿­
-// ÀÌ ¹è¿­¿¡´Â ¸ðµç ºí·ÏÀÇ 4¹æÇâ ¸ð¾çÀÌ ÀúÀåµÇ¾î ÀÖ´Ù.
+// í…ŒíŠ¸ë¦­ìŠ¤ ë¸”ë¡ì„ ìœ„í•œ 4ì°¨ì› ë°°ì—´
+// ì´ ë°°ì—´ì—ëŠ” ëª¨ë“  ë¸”ë¡ì˜ 4ë°©í–¥ ëª¨ì–‘ì´ ì €ìž¥ë˜ì–´ ìžˆë‹¤.
 /*
-	ºí·ÏÀÇ ¸ðµç È¸Àü ¸ð¾çÀ» Ãâ·ÂÇÏ±â À§ÇØ¼­ 4Â÷¿ø ¹è¿­À» »ç¿ëÇÏ¿´´Ù. ¿©±â¿¡¼­´Â Ã¹ ¹øÀç 7´Â ºí·ÏÀÇ Á¾·ù,
-	µÎ ¹øÂ° 4´Â ºí·ÏÀÇ È¸ÀüÀ» ³ªÅ¸³»´Â °ÍÀÌ¶ó°í »ý°¢ÇÏÀÚ.
-	¸ðµç ºí·Ï ¸ð¾çÀÇ 4°¡Áö(¹æÇâ) ¸ð¾çÀ» Ãâ·ÂÇÏ±â À§ÇØ¼­ ¹è¿­¿¡ °ªÀ» ´õ Ãß°¡ÇÏ¿´´Ù. ¾Æ·¡ÀÇ ¹è¿­ÀÇ °ªÀÌ È¥¶ó½º·¯¿ì¸é
-	¾Æ·¡¿Í °°ÀÌ °¢°¢ 4ÁÙ¾¿ ²÷¾î¼­ º¸¸é ºí·ÏÀÇ ¸ð¾çÀ» ¾Ë ¼ö ÀÖ´Ù.
+	ë¸”ë¡ì˜ ëª¨ë“  íšŒì „ ëª¨ì–‘ì„ ì¶œë ¥í•˜ê¸° ìœ„í•´ì„œ 4ì°¨ì› ë°°ì—´ì„ ì‚¬ìš©í•˜ì˜€ë‹¤. ì—¬ê¸°ì—ì„œëŠ” ì²« ë²ˆìž¬ 7ëŠ” ë¸”ë¡ì˜ ì¢…ë¥˜,
+	ë‘ ë²ˆì§¸ 4ëŠ” ë¸”ë¡ì˜ íšŒì „ì„ ë‚˜íƒ€ë‚´ëŠ” ê²ƒì´ë¼ê³  ìƒê°í•˜ìž.
+	ëª¨ë“  ë¸”ë¡ ëª¨ì–‘ì˜ 4ê°€ì§€(ë°©í–¥) ëª¨ì–‘ì„ ì¶œë ¥í•˜ê¸° ìœ„í•´ì„œ ë°°ì—´ì— ê°’ì„ ë” ì¶”ê°€í•˜ì˜€ë‹¤. ì•„ëž˜ì˜ ë°°ì—´ì˜ ê°’ì´ í˜¼ë¼ìŠ¤ëŸ¬ìš°ë©´
+	ì•„ëž˜ì™€ ê°™ì´ ê°ê° 4ì¤„ì”© ëŠì–´ì„œ ë³´ë©´ ë¸”ë¡ì˜ ëª¨ì–‘ì„ ì•Œ ìˆ˜ ìžˆë‹¤.
 */
 
-// ÀüÃ¼ ºí·Ï ¸ð¾ç
+// ì „ì²´ ë¸”ë¡ ëª¨ì–‘
 int Block[7][4][4][4] = {0, 1, 0, 0,
 						 0, 1, 0, 0,
 						 0, 1, 0, 0,
@@ -205,468 +205,468 @@ int Block[7][4][4][4] = {0, 1, 0, 0,
 						 0, 0, 0, 0,
 						 0, 0, 0, 0}; 
 
-// ¹è°æÀÇ ¹è¿­
+// ë°°ê²½ì˜ ë°°ì—´
 int BackGround[21][12];
 
-// Å¸ÀÓ OFF
+// íƒ€ìž„ OFF
 BOOL bTime = OFF;
-// ºí·ÏÀÇ ¼ö(Á¾·ù)
+// ë¸”ë¡ì˜ ìˆ˜(ì¢…ë¥˜)
 int BlockNum;
-// ºí·ÏÀÇ È¸Àü
+// ë¸”ë¡ì˜ íšŒì „
 int RotateNum;
-// ÇöÀçÀÇ ºí·Ï ÁÂÇ¥
+// í˜„ìž¬ì˜ ë¸”ë¡ ì¢Œí‘œ
 int NowX, NowY;
-// ´ÙÀ½ ºí·ÏÀÇ ¼ö(Á¾·ù)
+// ë‹¤ìŒ ë¸”ë¡ì˜ ìˆ˜(ì¢…ë¥˜)
 int NextBlockNum;
-// ºí·ÏÀÇ ÇÑ ÁÙÀÌ ´Ù Ã¤¿öÁ³À» °æ¿ì (Á¡¼ö)
+// ë¸”ë¡ì˜ í•œ ì¤„ì´ ë‹¤ ì±„ì›Œì¡Œì„ ê²½ìš° (ì ìˆ˜)
 int FullLineNum;
-// °ÔÀÓÀ» ÁøÇàÇÒÁö °áÁ¤
+// ê²Œìž„ì„ ì§„í–‰í• ì§€ ê²°ì •
 int PlayerState;
 
-// Ghostºí·Ï ¼³Á¤ ¢¹
+// Ghostë¸”ë¡ ì„¤ì • â–·
 int GhostBlock[4][4];
-// Ghostºí·ÏÀÇ yÁÂÇ¥ & ÃÊ±âÈ­ ¢¹
+// Ghostë¸”ë¡ì˜ yì¢Œí‘œ & ì´ˆê¸°í™” â–·
 int GhostY = 0;
-// Ghostºí·ÏÀÇ ÀÌÀü yÁÂÇ¥ & ÃÊ±âÈ­ ¢¹
+// Ghostë¸”ë¡ì˜ ì´ì „ yì¢Œí‘œ & ì´ˆê¸°í™” â–·
 int PreGhostY = 0;
 
-// ÇÑ ¹ø¿¡ ÀúÀå ÇÑ ¹ø¸¸ °¡´É ¢¹
+// í•œ ë²ˆì— ì €ìž¥ í•œ ë²ˆë§Œ ê°€ëŠ¥ â–·
 BOOL isHoldUsed = FALSE;
-// ÀúÀåµÈ ºí·Ï ¿©ºÎ ¢¹
+// ì €ìž¥ëœ ë¸”ë¡ ì—¬ë¶€ â–·
 BOOL hasBlockHold = FALSE;
-// ÀúÀåµÈ ºí·ÏÀÇ ¸ð¾ç ¢¹
+// ì €ìž¥ëœ ë¸”ë¡ì˜ ëª¨ì–‘ â–·
 int holdBlockNum = -1;
 
-// Àå¾Ö¹° ºí·ÏÀÇ ¿­ ¢¹ 
+// ìž¥ì• ë¬¼ ë¸”ë¡ì˜ ì—´ â–· 
 int ObstacleCol;
-// Çà·Ä ñé ¿­ ¢¹ 
+// í–‰ë ¬ ä¸­ ì—´ â–· 
 int count;
 
-// À©µµ¿ìÀÇ ÇÚµéÀÌ ÀúÀåµÉ º¯¼ö¸¦ ¸¸µç´Ù. (»ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö¸¦ À§ÇÔ)
+// ìœˆë„ìš°ì˜ í•¸ë“¤ì´ ì €ìž¥ë  ë³€ìˆ˜ë¥¼ ë§Œë“ ë‹¤. (ì‚¬ìš©ìž ì •ì˜ í•¨ìˆ˜ë¥¼ ìœ„í•¨)
 HWND g_hWnd;
 
-// ¹è°æÀÇ ¹è¿­ ÃÊ±âÈ­ ÇÏ´Â ÇÔ¼ö
+// ë°°ê²½ì˜ ë°°ì—´ ì´ˆê¸°í™” í•˜ëŠ” í•¨ìˆ˜
 void InitBackGround(void);
 
-// ¹è°æÀ» ±×¸®´Â ÇÔ¼ö
+// ë°°ê²½ì„ ê·¸ë¦¬ëŠ” í•¨ìˆ˜
 void DrawBackGround(void);
 
-// ºí·ÏÀ» ±×¸®´Â ÇÔ¼ö
+// ë¸”ë¡ì„ ê·¸ë¦¬ëŠ” í•¨ìˆ˜
 void DrawBlock(void);
 
-// ºí·ÏÀ» Áö¿ì´Â ÇÔ¼ö
+// ë¸”ë¡ì„ ì§€ìš°ëŠ” í•¨ìˆ˜
 void EraseBlock(void);
 
-// ´ÙÀ½ ºí·ÏÀ» ±×¸®´Â ÇÔ¼ö
+// ë‹¤ìŒ ë¸”ë¡ì„ ê·¸ë¦¬ëŠ” í•¨ìˆ˜
 void DrawNextBlock(void);
 
-// ºí·ÏÀÌ ¿òÁ÷ÀÏ ¼ö ÀÖ´ÂÁö¸¦ Ã¼Å©ÇÏ´Â ÇÔ¼ö
+// ë¸”ë¡ì´ ì›€ì§ì¼ ìˆ˜ ìžˆëŠ”ì§€ë¥¼ ì²´í¬í•˜ëŠ” í•¨ìˆ˜
 BOOL BlockCanMove(int x, int y);
 
-// ºí·ÏÀ» ¿ÞÂÊÀ¸·Î ¿òÁ÷ÀÌ´Â ÇÔ¼ö
+// ë¸”ë¡ì„ ì™¼ìª½ìœ¼ë¡œ ì›€ì§ì´ëŠ” í•¨ìˆ˜
 void LeftMove(void);
 
-// ºí·ÏÀ» ¿À¸¥ÂÊÀ¸·Î ¿òÁ÷ÀÌ´Â ÇÔ¼ö
+// ë¸”ë¡ì„ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì›€ì§ì´ëŠ” í•¨ìˆ˜
 void RightMove(void);
 
-// ºí·ÏÀ» È¸ÀüÇÏ´Â ÇÔ¼ö
+// ë¸”ë¡ì„ íšŒì „í•˜ëŠ” í•¨ìˆ˜
 void Rotate(void);
 
-// ºí·ÏÀ» ¾Æ·¡·Î ¿òÁ÷ÀÌ´Â ÇÔ¼ö
+// ë¸”ë¡ì„ ì•„ëž˜ë¡œ ì›€ì§ì´ëŠ” í•¨ìˆ˜
 BOOL DownMove(void);
 
-// ¹è°æÀÇ ¹è¿­À» ¾÷µ¥ÀÌÆ®ÇÏ´Â ÇÔ¼ö
+// ë°°ê²½ì˜ ë°°ì—´ì„ ì—…ë°ì´íŠ¸í•˜ëŠ” í•¨ìˆ˜
 void UpdateBackGround(void);
 
-// ºí·ÏÀÇ ÇÑ ÁÙÀÌ ²Ë Ã¡´ÂÁö¸¦ Ã¼Å©
+// ë¸”ë¡ì˜ í•œ ì¤„ì´ ê½‰ ì°¼ëŠ”ì§€ë¥¼ ì²´í¬
 void CheckFullLine(void);
 
-// ºí·ÏÀÇ ÇÑ ÁÙÀÌ ²Ë Â÷¸é Áö¿ì´Â ÇÔ¼ö
+// ë¸”ë¡ì˜ í•œ ì¤„ì´ ê½‰ ì°¨ë©´ ì§€ìš°ëŠ” í•¨ìˆ˜
 void EraseFullLine(int);
 
-// ¶³¾îÁö´Â ºí·ÏÀÇ ¿¹»ó ÂøÁö ÁöÁ¡À» ±×¸®´Â ÇÔ¼ö ¢º Mission 3 GhostBlock
+// ë–¨ì–´ì§€ëŠ” ë¸”ë¡ì˜ ì˜ˆìƒ ì°©ì§€ ì§€ì ì„ ê·¸ë¦¬ëŠ” í•¨ìˆ˜ â–¶ Mission 3 GhostBlock
 void DrawGhostBlock(void);
 
-// GhostBlockÀ» Áö¿ì´Â ÇÔ¼ö ¢¹
+// GhostBlockì„ ì§€ìš°ëŠ” í•¨ìˆ˜ â–·
 void EraseGhostBlock(void);
 
-// ÇöÀç ºí·ÏÀ» ÀúÀåÇÏ´Â ÇÔ¼ö ¢º Mission 2 Hold
+// í˜„ìž¬ ë¸”ë¡ì„ ì €ìž¥í•˜ëŠ” í•¨ìˆ˜ â–¶ Mission 2 Hold
 void Hold(void);
 
-// Àå¾Ö¹° ºí·ÏÀ» ¸¸µå´Â ÇÔ¼ö ¢º Mission 1 Obstacle
+// ìž¥ì• ë¬¼ ë¸”ë¡ì„ ë§Œë“œëŠ” í•¨ìˆ˜ â–¶ Mission 1 Obstacle
 void Obstacle(void);
 
-// Àå¾Ö¹° ºí·ÏÀ» ÃÊ±âÈ­ÇÏ´Â ÇÔ¼ö ¢¹
+// ìž¥ì• ë¬¼ ë¸”ë¡ì„ ì´ˆê¸°í™”í•˜ëŠ” í•¨ìˆ˜ â–·
 void InitObstacle(void);
 
 
 /*
-(1) C declaration(__cdecl) : __cdecl ·Î ÇÔ¼ö°¡ ±Ô¾àÀÌ µÇ¾î ÀÖÀ¸¸é,
-	ÇÔ¼ö¸¦ È£ÃâÇÑ ÂÊ¿¡¼­ parameter °ªµéÀ» ÇÔ¼ö°¡ return µÇ°í ³­ÈÄ
-	stack ¿¡¼­ Á¦°ÅÇÔ.µû¶ó¼­ È£ÃâÇÑ ÇÔ¼ö°¡ ÀÚ½ÅÀÇ parameter ¸¦ ¾Ë°í ÀÖ±â ¶§¹®¿¡
-	printf ¿Í °°ÀÌ parameter °¡ °¡º¯ÀûÀÎ ÇÔ¼ö¿¡¼­ »ç¿ë°¡´É.
+(1) C declaration(__cdecl) : __cdecl ë¡œ í•¨ìˆ˜ê°€ ê·œì•½ì´ ë˜ì–´ ìžˆìœ¼ë©´,
+	í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•œ ìª½ì—ì„œ parameter ê°’ë“¤ì„ í•¨ìˆ˜ê°€ return ë˜ê³  ë‚œí›„
+	stack ì—ì„œ ì œê±°í•¨.ë”°ë¼ì„œ í˜¸ì¶œí•œ í•¨ìˆ˜ê°€ ìžì‹ ì˜ parameter ë¥¼ ì•Œê³  ìžˆê¸° ë•Œë¬¸ì—
+	printf ì™€ ê°™ì´ parameter ê°€ ê°€ë³€ì ì¸ í•¨ìˆ˜ì—ì„œ ì‚¬ìš©ê°€ëŠ¥.
 
-	__cdeclÀº È£ÃâÀÚ¿¡ ÀÇÇØ °¡º¯ÀÎÀÚ·Î ¹ÞÀº ½ºÅØ ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇÏ´Â ½ÄÀÌ¸ç,
-	ÇöÀç ÇÔ¼öÈ£Ãâ±Ô¾àÀÇ ±âº»Çü(µðÆúÆ®)·Î µÅ ÀÖ´Ù. ¹°·Ð, ÀÌ ±âº»ÇüÀ» [ÇÁ·ÎÁ§Æ®] -> [¼Ó¼º] -> [C/C++] -> [°í±Þ] -> [È£Ãâ ±ÔÄ¢] ¿¡¼­
-	¼öÁ¤ÇÒ ¼ö´Â ÀÖ´Ù. ¿©±â¼­! È£ÃâÀÚ(Caller)¶ó´Â ²Ï³ª ¸»ÀÌ ¾î»öÇÒ ¼ö ÀÖ´Âµ¥ È£ÃâÀÚ´Â ÇÔ¼ö¸¦ ºÎ¸£´Â ÇÔ¼öÀÌ´Ù.
-	¿¹¸¦ µé¸é, main()ÇÔ¼ö¿¡¼­ A()¶ó´Â ÇÔ¼ö¸¦ ½ÇÇàÇß´Ù¸é, A()ÀÇ È£ÃâÀÚ´Â main()ÇÔ¼ö°¡ µÇ´Â °ÍÀÌ´Ù.
-	´õºÒ¾î ÀÌ »óÈ²¿¡¼­ A()ÀÇ ÇÔ¼ö´Â main()À¸·ÎºÎÅÍ È£Ãâ ¼ö½ÅÀÚ(Callee)°¡ µÇ´Â °ÍÀÌ´Ù.
-	½ºÅÃ ¸Þ¸ð¸®¸¦ È£ÃâÀÚ°¡ Á÷Á¢ ÇØÁ¦¸¦ ÇÏ´Ùº¸´Ï ½ÇÇàÆÄÀÏÀÌ Ä¿Áø´Ù´Â ¼³¸íÀÌ ÀÖ´Âµ¥,
-	ÀÌ´Â ÇØÁ¦ÇÏ´Â ÄÚµå¸¦ °¡º¯ ÀÎÀÚ ÄÚµå¸¦ °¡Áø ÇÔ¼ö ÇÏ³ªÇÏ³ª ¸¶´Ù ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇÏ´Â ÄÚµå¸¦ ³Ö¾î¾ßÇÏ±â ¶§¹®ÀÌ¶ó ¼³¸íÇÏ°í ÀÖ´Ù.
+	__cdeclì€ í˜¸ì¶œìžì— ì˜í•´ ê°€ë³€ì¸ìžë¡œ ë°›ì€ ìŠ¤í… ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•˜ëŠ” ì‹ì´ë©°,
+	í˜„ìž¬ í•¨ìˆ˜í˜¸ì¶œê·œì•½ì˜ ê¸°ë³¸í˜•(ë””í´íŠ¸)ë¡œ ë¼ ìžˆë‹¤. ë¬¼ë¡ , ì´ ê¸°ë³¸í˜•ì„ [í”„ë¡œì íŠ¸] -> [ì†ì„±] -> [C/C++] -> [ê³ ê¸‰] -> [í˜¸ì¶œ ê·œì¹™] ì—ì„œ
+	ìˆ˜ì •í•  ìˆ˜ëŠ” ìžˆë‹¤. ì—¬ê¸°ì„œ! í˜¸ì¶œìž(Caller)ë¼ëŠ” ê½¤ë‚˜ ë§ì´ ì–´ìƒ‰í•  ìˆ˜ ìžˆëŠ”ë° í˜¸ì¶œìžëŠ” í•¨ìˆ˜ë¥¼ ë¶€ë¥´ëŠ” í•¨ìˆ˜ì´ë‹¤.
+	ì˜ˆë¥¼ ë“¤ë©´, main()í•¨ìˆ˜ì—ì„œ A()ë¼ëŠ” í•¨ìˆ˜ë¥¼ ì‹¤í–‰í–ˆë‹¤ë©´, A()ì˜ í˜¸ì¶œìžëŠ” main()í•¨ìˆ˜ê°€ ë˜ëŠ” ê²ƒì´ë‹¤.
+	ë”ë¶ˆì–´ ì´ ìƒí™©ì—ì„œ A()ì˜ í•¨ìˆ˜ëŠ” main()ìœ¼ë¡œë¶€í„° í˜¸ì¶œ ìˆ˜ì‹ ìž(Callee)ê°€ ë˜ëŠ” ê²ƒì´ë‹¤.
+	ìŠ¤íƒ ë©”ëª¨ë¦¬ë¥¼ í˜¸ì¶œìžê°€ ì§ì ‘ í•´ì œë¥¼ í•˜ë‹¤ë³´ë‹ˆ ì‹¤í–‰íŒŒì¼ì´ ì»¤ì§„ë‹¤ëŠ” ì„¤ëª…ì´ ìžˆëŠ”ë°,
+	ì´ëŠ” í•´ì œí•˜ëŠ” ì½”ë“œë¥¼ ê°€ë³€ ì¸ìž ì½”ë“œë¥¼ ê°€ì§„ í•¨ìˆ˜ í•˜ë‚˜í•˜ë‚˜ ë§ˆë‹¤ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•˜ëŠ” ì½”ë“œë¥¼ ë„£ì–´ì•¼í•˜ê¸° ë•Œë¬¸ì´ë¼ ì„¤ëª…í•˜ê³  ìžˆë‹¤.
 
 
-(2) standard call(__stdcall) : ÀÌ ±Ô¾àÀº ÇÔ¼ö¸¦ È£Ãâ ¹ÞÀº ÂÊ(Áï ÇÔ¼öÀÇ ³»ºÎ)¿¡¼­
-	parameter ¸¦ Á¦°ÅÇÏµµ·Ï µÇ¾î ÀÖ´Ù.µû¶ó¼­ parameter ÀÇ °¹¼ö°¡ ¸íÈ®ÇÑ °÷¿¡¼­
-	»ç¿ëÇÏ°Ô µÇ¾î ÀÖ´Ù.À©µµ¿ìÁîÀÇ API ¿Í °°Àº °æ¿ì ÇÔ¼ö¿¡ µû¸¥ ÀÎÀÚµéÀÌ ¸íÈ®È÷
-	Á¤ÀÇ µÇ¾î ÀÖ±â ¶§¹®¿¡ ¹Ù·Î __stdcall ±Ô¾àÀ» »ç¿ëÇÏ°í ÀÖ´Ù.
+(2) standard call(__stdcall) : ì´ ê·œì•½ì€ í•¨ìˆ˜ë¥¼ í˜¸ì¶œ ë°›ì€ ìª½(ì¦‰ í•¨ìˆ˜ì˜ ë‚´ë¶€)ì—ì„œ
+	parameter ë¥¼ ì œê±°í•˜ë„ë¡ ë˜ì–´ ìžˆë‹¤.ë”°ë¼ì„œ parameter ì˜ ê°¯ìˆ˜ê°€ ëª…í™•í•œ ê³³ì—ì„œ
+	ì‚¬ìš©í•˜ê²Œ ë˜ì–´ ìžˆë‹¤.ìœˆë„ìš°ì¦ˆì˜ API ì™€ ê°™ì€ ê²½ìš° í•¨ìˆ˜ì— ë”°ë¥¸ ì¸ìžë“¤ì´ ëª…í™•ížˆ
+	ì •ì˜ ë˜ì–´ ìžˆê¸° ë•Œë¬¸ì— ë°”ë¡œ __stdcall ê·œì•½ì„ ì‚¬ìš©í•˜ê³  ìžˆë‹¤.
 
-	WINAPI·Î define±îÁö ÇØ³õÀº ÄÚµåÀÌ¸ç, ±× Æ¯Â¡Àº È£ÃâÀÚ¿¡¼­ ÀÎÀÚ ½ºÅØÀ» ³Ö´Â ÇàÀ§¸¸ ÇÒ»Ó »èÁ¦ÇØÁÖÁö ¾Ê´Â´Ù´Â °ÍÀÌ´Ù.
-	µû¶ó¼­ ÇØ´ç ½ºÅØÀº ÇÔ¼ö ³»ºÎ¿¡¼­ Á÷Á¢ »èÁ¦¸¦ ÇØ¾ßÇÏ¸ç, ¸¸¾à °¡º¯ÀÎÀÚ·Î ÀÎÀÚ°¡ µé¾î°¥ °æ¿ì Á¤È®ÇÑ ÀÎÀÚÀÇ Å©±â¸¦ ÇÔ¼ö ³»¿¡¼­ ¾Ë ¼ö ¾ø¾î
-	ÇÔ¼ö ½ÇÇà ÀüÀ¸·Î È¸±ÍÇÏÁö ¸øÇÑ´Ù. Áï, __stdcallÀº °¡º¯ÀÎÀÚ¸¦ »ç¿ëÇÒ ¼ö ¾ø´Ù.
+	WINAPIë¡œ defineê¹Œì§€ í•´ë†“ì€ ì½”ë“œì´ë©°, ê·¸ íŠ¹ì§•ì€ í˜¸ì¶œìžì—ì„œ ì¸ìž ìŠ¤í…ì„ ë„£ëŠ” í–‰ìœ„ë§Œ í• ë¿ ì‚­ì œí•´ì£¼ì§€ ì•ŠëŠ”ë‹¤ëŠ” ê²ƒì´ë‹¤.
+	ë”°ë¼ì„œ í•´ë‹¹ ìŠ¤í…ì€ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ ì§ì ‘ ì‚­ì œë¥¼ í•´ì•¼í•˜ë©°, ë§Œì•½ ê°€ë³€ì¸ìžë¡œ ì¸ìžê°€ ë“¤ì–´ê°ˆ ê²½ìš° ì •í™•í•œ ì¸ìžì˜ í¬ê¸°ë¥¼ í•¨ìˆ˜ ë‚´ì—ì„œ ì•Œ ìˆ˜ ì—†ì–´
+	í•¨ìˆ˜ ì‹¤í–‰ ì „ìœ¼ë¡œ íšŒê·€í•˜ì§€ ëª»í•œë‹¤. ì¦‰, __stdcallì€ ê°€ë³€ì¸ìžë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤.
 
-	(Âü°í)stdcall È£Ãâ ¹æ½ÄÀÌ cdecl È£Ãâ ¹æ½Äº¸´Ù ºü¸£°í, ÇÁ·Î±×·¥ ¿ë·®µµ Àû¾îÁü.
-		  stdcall È£Ãâ Çü½ÄÀº È£ÃâÇÑ ÇÔ¼ö ³»ºÎ¿¡¼­ ÆÄ¶ó¹ÌÅÍ Å©±â¸¸Å­ popÀ» ÇØ ÁÖ±â ¶§¹®¿¡ °¡º¯ÀÎÀÚ¸¦ »ç¿ëÇÏ´Â °ÍÀÌ ºÒ°¡´É
+	(ì°¸ê³ )stdcall í˜¸ì¶œ ë°©ì‹ì´ cdecl í˜¸ì¶œ ë°©ì‹ë³´ë‹¤ ë¹ ë¥´ê³ , í”„ë¡œê·¸ëž¨ ìš©ëŸ‰ë„ ì ì–´ì§.
+		  stdcall í˜¸ì¶œ í˜•ì‹ì€ í˜¸ì¶œí•œ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ íŒŒë¼ë¯¸í„° í¬ê¸°ë§Œí¼ popì„ í•´ ì£¼ê¸° ë•Œë¬¸ì— ê°€ë³€ì¸ìžë¥¼ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ë¶ˆê°€ëŠ¥
 
 */
-// ¸Þ½ÃÁöÀÇ Ã³¸®¸¦ À§ÇØ ÄÝ ¹é ÇÔ¼ö¸¦ ¼±¾ðÇÑ´Ù.
+// ë©”ì‹œì§€ì˜ ì²˜ë¦¬ë¥¼ ìœ„í•´ ì½œ ë°± í•¨ìˆ˜ë¥¼ ì„ ì–¸í•œë‹¤.
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
-// ÇÁ·Î±×·¥ÀÇ ½ÃÀÛÁ¡À» ÁöÁ¤ÇÑ´Ù.
+// í”„ë¡œê·¸ëž¨ì˜ ì‹œìž‘ì ì„ ì§€ì •í•œë‹¤.
 int WINAPI WinMain(HINSTANCE hInstance,
 				HINSTANCE hPrevInstance,
 				LPSTR lpCmdLine,
 				int nShowCmd)
 {
-	// ¸Þ½ÃÁö ±¸Á¶Ã¼¸¦ ¼±¾ðÇÑ´Ù.
+	// ë©”ì‹œì§€ êµ¬ì¡°ì²´ë¥¼ ì„ ì–¸í•œë‹¤.
 	MSG mSg;
 
-	// À©µµ¿ìÀÇ Ä¸¼ÇÀ» ÁöÁ¤ÇÑ´Ù.
-	WCHAR szTitle[] = L"½ºÇÇµå·± Å×Æ®¸®½º";
-	// À©µµ¿ìÀÇ Å¬·¡½º¸¦ ÁöÁ¤ÇÑ´Ù.
+	// ìœˆë„ìš°ì˜ ìº¡ì…˜ì„ ì§€ì •í•œë‹¤.
+	WCHAR szTitle[] = L"ìŠ¤í”¼ë“œëŸ° í…ŒíŠ¸ë¦¬ìŠ¤";
+	// ìœˆë„ìš°ì˜ í´ëž˜ìŠ¤ë¥¼ ì§€ì •í•œë‹¤.
 	WCHAR szClass[] = L"Class";
 
 
-	// Ãß°¡ÀûÀÎ ¾ÆÀÌÄÜ ¼ÂÆÃ ¹ý/////////////////////////////////////
+	// ì¶”ê°€ì ì¸ ì•„ì´ì½˜ ì…‹íŒ… ë²•/////////////////////////////////////
 	HICON hIcon1;   // icon handle 
 	HICON hIcon2;   // icon handle 
 
-	// ±âº» ¾ÆÀÌÄÜ »ý¼º
+	// ê¸°ë³¸ ì•„ì´ì½˜ ìƒì„±
 	hIcon1 = LoadIcon(NULL, IDI_QUESTION);
 
-	// »ç¿ëÀÚ Á¤ÀÇ ¾ÆÀÌÄÜ »ý¼º 
+	// ì‚¬ìš©ìž ì •ì˜ ì•„ì´ì½˜ ìƒì„± 
 	hIcon2 = LoadIcon(hInstance, MAKEINTRESOURCE(101));
 	///////////////////////////////////////////////////////////////
 
-	// WNDCLASSEX ±¸Á¶Ã¼¸¦ ¼±¾ðÇÑ´Ù. Âü°í·Î Ã¢Àº ÇÏ³ªÀÇ À©µµ¿ì Å¬·¡½º¸¦ ±â¹ÝÀ¸·Î »ý¼ºµÈ´Ù.
+	// WNDCLASSEX êµ¬ì¡°ì²´ë¥¼ ì„ ì–¸í•œë‹¤. ì°¸ê³ ë¡œ ì°½ì€ í•˜ë‚˜ì˜ ìœˆë„ìš° í´ëž˜ìŠ¤ë¥¼ ê¸°ë°˜ìœ¼ë¡œ ìƒì„±ëœë‹¤.
 	WNDCLASSEX WndEx;
 
-	// WNDCLASSEX ±¸Á¶Ã¼ÀÇ Å©±â¸¦ ÁöÁ¤ÇÑ´Ù.
+	// WNDCLASSEX êµ¬ì¡°ì²´ì˜ í¬ê¸°ë¥¼ ì§€ì •í•œë‹¤.
 	WndEx.cbSize = sizeof(WndEx);
 
-	// À©µµ¿ìÀÇ ½ºÅ¸ÀÏÀ» ÁöÁ¤ÇÑ´Ù.
+	// ìœˆë„ìš°ì˜ ìŠ¤íƒ€ì¼ì„ ì§€ì •í•œë‹¤.
 	WndEx.style = NULL;
 
-	// ¸Þ½ÃÁö¸¦ Ã³¸®ÇÒ ÇÔ¼ö¸¦ ÁöÁ¤ÇÑ´Ù. Áï ¸Þ½ÃÁö°¡ ¹ß»ýÇÏ¸é ±× ¸Þ½ÃÁö¸¦ WndProc ÇÔ¼ö¿¡¼­ Ã³¸®ÇÑ´Ù.
+	// ë©”ì‹œì§€ë¥¼ ì²˜ë¦¬í•  í•¨ìˆ˜ë¥¼ ì§€ì •í•œë‹¤. ì¦‰ ë©”ì‹œì§€ê°€ ë°œìƒí•˜ë©´ ê·¸ ë©”ì‹œì§€ë¥¼ WndProc í•¨ìˆ˜ì—ì„œ ì²˜ë¦¬í•œë‹¤.
 	WndEx.lpfnWndProc = WndProc;
 
-	// Ãß°¡ Å¬·¡½º¸¦ ÁöÁ¤ÇÑ´Ù. Ãß°¡ Å¬·¡½º°¡ ¾ø±â ¶§¹®¿¡ NULL °ªÀ¸·Î ÁöÁ¤ÇÑ´Ù.
+	// ì¶”ê°€ í´ëž˜ìŠ¤ë¥¼ ì§€ì •í•œë‹¤. ì¶”ê°€ í´ëž˜ìŠ¤ê°€ ì—†ê¸° ë•Œë¬¸ì— NULL ê°’ìœ¼ë¡œ ì§€ì •í•œë‹¤.
 	WndEx.cbClsExtra = 0;
 
-	// Ãß°¡ À©µµ¿ì¸¦ ÁöÁ¤ÇÑ´Ù. Ãß°¡ À©µµ¿ì°¡ ¾ø±â ¶§¹®¿¡ NULL °ªÀ¸·Î ÁöÁ¤ÇÑ´Ù.
+	// ì¶”ê°€ ìœˆë„ìš°ë¥¼ ì§€ì •í•œë‹¤. ì¶”ê°€ ìœˆë„ìš°ê°€ ì—†ê¸° ë•Œë¬¸ì— NULL ê°’ìœ¼ë¡œ ì§€ì •í•œë‹¤.
 	WndEx.cbWndExtra = 0;
 
-	// ÀÎ½ºÅÏ½º ÇÚµéÀ» ÁöÁ¤ÇÑ´Ù.
+	// ì¸ìŠ¤í„´ìŠ¤ í•¸ë“¤ì„ ì§€ì •í•œë‹¤.
 	WndEx.hInstance = hInstance;
 
-	// ½ÇÇà ÆÄÀÏ¿¡ ¾²ÀÏ ¾ÆÀÌÄÜÀ» ÁöÁ¤ÇÑ´Ù. LoadIcon() ÇÔ¼ö´Â ¸®¼Ò½º¿¡¼­ ¾ÆÀÌÄÜÀ» ºÒ·¯¿Í ¹ÝÈ¯ÇÑ´Ù.
+	// ì‹¤í–‰ íŒŒì¼ì— ì“°ì¼ ì•„ì´ì½˜ì„ ì§€ì •í•œë‹¤. LoadIcon() í•¨ìˆ˜ëŠ” ë¦¬ì†ŒìŠ¤ì—ì„œ ì•„ì´ì½˜ì„ ë¶ˆëŸ¬ì™€ ë°˜í™˜í•œë‹¤.
 	WndEx.hIcon = LoadIcon(NULL, L"IDI_ICON");
 
-	// À©µµ¿ì¿¡¼­ ¾²ÀÏ Ä¿¼­¸¦ ÁöÁ¤ÇÑ´Ù. LoadCursor() ÇÔ¼ö´Â ¹Ì¸® ¿¹¾àµÈ Ä¿¼­ °ªÀ» ¹ÝÈ¯ÇÑ´Ù.
+	// ìœˆë„ìš°ì—ì„œ ì“°ì¼ ì»¤ì„œë¥¼ ì§€ì •í•œë‹¤. LoadCursor() í•¨ìˆ˜ëŠ” ë¯¸ë¦¬ ì˜ˆì•½ëœ ì»¤ì„œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	WndEx.hCursor = LoadCursor(NULL, IDC_ARROW);
 
-	// À©µµ¿ìÀÇ ¹è°æ»öÀ» ÁöÁ¤ÇÑ´Ù. GetStockObject() ÇÔ¼ö´Â °ËÁ¤»öÀ» ¹ÝÈ¯ÇÑ´Ù.
+	// ìœˆë„ìš°ì˜ ë°°ê²½ìƒ‰ì„ ì§€ì •í•œë‹¤. GetStockObject() í•¨ìˆ˜ëŠ” ê²€ì •ìƒ‰ì„ ë°˜í™˜í•œë‹¤.
 	WndEx.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 
-	// À©µµ¿ì¿¡ »ç¿ëµÉ ¸Þ´º¸¦ ÁöÁ¤ÇÑ´Ù. ¸Þ´º°¡ ¾ø±â ¶§¹®¿¡ NULL °ªÀ¸·Î ÁöÁ¤ÇÏ¿´´Ù.
+	// ìœˆë„ìš°ì— ì‚¬ìš©ë  ë©”ë‰´ë¥¼ ì§€ì •í•œë‹¤. ë©”ë‰´ê°€ ì—†ê¸° ë•Œë¬¸ì— NULL ê°’ìœ¼ë¡œ ì§€ì •í•˜ì˜€ë‹¤.
 	WndEx.lpszMenuName = /*L"IDR_MENU"*/MAKEINTRESOURCE(IDR_MENU);
 
-	// Å¬·¡½º¸¦ ÁöÁ¤ÇÑ´Ù. Âü°í·Î ÀÌ Å¬·¡½º´Â CreateWindowEx() ÇÔ¼ö¿¡¼­ ÁöÁ¤µÉ Å¬·¡½º¿Í µ¿ÀÏÇØ¾ß ÇÑ´Ù.
+	// í´ëž˜ìŠ¤ë¥¼ ì§€ì •í•œë‹¤. ì°¸ê³ ë¡œ ì´ í´ëž˜ìŠ¤ëŠ” CreateWindowEx() í•¨ìˆ˜ì—ì„œ ì§€ì •ë  í´ëž˜ìŠ¤ì™€ ë™ì¼í•´ì•¼ í•œë‹¤.
 	WndEx.lpszClassName = szClass;
 
-	// À©µµ¿ìÀÇ Ä¸¼ÇÀÌ ¾²ÀÏ ¾ÆÀÌÄÜÀ» ÁöÁ¤ÇÑ´Ù. LoadIcon() ÇÔ¼ö´Â ¸®¼Ò½º¿¡¼­ ¾ÆÀÌÄÜÀ» ºÒ·¯¿Í ¹ÝÈ¯ÇÑ´Ù.
+	// ìœˆë„ìš°ì˜ ìº¡ì…˜ì´ ì“°ì¼ ì•„ì´ì½˜ì„ ì§€ì •í•œë‹¤. LoadIcon() í•¨ìˆ˜ëŠ” ë¦¬ì†ŒìŠ¤ì—ì„œ ì•„ì´ì½˜ì„ ë¶ˆëŸ¬ì™€ ë°˜í™˜í•œë‹¤.
 	WndEx.hIconSm = LoadIcon(hInstance, /*L"IDI_ICON"*/MAKEINTRESOURCE(IDI_ICON));
 	//WndEx.hIconSm = hIcon2;
 
 	/*
-		¸®¼Ò½º¶õ -> ¸®¼Ò½º¶õ ±×·¡ÇÈ ¿ä¼Ò¸¦ È°¿ëÇÏ´Âµ¥ ÃÊÁ¡ÀÌ ¸ÂÃçÁø ÀÚ¿øÀÌ´Ù.
-		¸®¼Ò½º µî·Ï -> ÇÁ·ÎÁ§Æ®- ¸®¼Ò½º ÆÄÀÏ ¸¶¿ì½º ¿À¸¥ÂÊ Å¬¸¯- Ãß°¡- ¸®¼Ò½º
-		¸®¼Ò½º ID¶õ -> ¸®¼Ò½º¿¡´Â °¢°¢ÀÇ ID°¡ ÇÒ´çµÇ¸ç, ÀÌ°ÍÀ» ½Äº°ÀÚ·Î ÀÌ¿ëÇÑ´Ù. ¸®¼Ò½º ºä·Î ¸®¼Ò½º¸¦ ÇÑ ´«¿¡ º¼ ¼ö ÀÖ´Ù.
-		¸®¼Ò½º ID È®ÀÎÇÏ±â -> ¸®¼Ò½º ºä¿¡¼­ ÇÑ´«¿¡ º¸°í °ü¸®ÇÒ ¼ö ÀÖ´Ù.
+		ë¦¬ì†ŒìŠ¤ëž€ -> ë¦¬ì†ŒìŠ¤ëž€ ê·¸ëž˜í”½ ìš”ì†Œë¥¼ í™œìš©í•˜ëŠ”ë° ì´ˆì ì´ ë§žì¶°ì§„ ìžì›ì´ë‹¤.
+		ë¦¬ì†ŒìŠ¤ ë“±ë¡ -> í”„ë¡œì íŠ¸- ë¦¬ì†ŒìŠ¤ íŒŒì¼ ë§ˆìš°ìŠ¤ ì˜¤ë¥¸ìª½ í´ë¦­- ì¶”ê°€- ë¦¬ì†ŒìŠ¤
+		ë¦¬ì†ŒìŠ¤ IDëž€ -> ë¦¬ì†ŒìŠ¤ì—ëŠ” ê°ê°ì˜ IDê°€ í• ë‹¹ë˜ë©°, ì´ê²ƒì„ ì‹ë³„ìžë¡œ ì´ìš©í•œë‹¤. ë¦¬ì†ŒìŠ¤ ë·°ë¡œ ë¦¬ì†ŒìŠ¤ë¥¼ í•œ ëˆˆì— ë³¼ ìˆ˜ ìžˆë‹¤.
+		ë¦¬ì†ŒìŠ¤ ID í™•ì¸í•˜ê¸° -> ë¦¬ì†ŒìŠ¤ ë·°ì—ì„œ í•œëˆˆì— ë³´ê³  ê´€ë¦¬í•  ìˆ˜ ìžˆë‹¤.
 
-		¾ÆÀÌÄÜ, Ä¿¼­ Á¦ÀÛ
-		¸®¼Ò½º µî·ÏÀ» ÅëÇØ ¾ÆÀÌÄÜ, Ä¿¼­¸¦ Á¦ÀÛÇÏ¸é Á÷Á¢ ±×¸²À» ±×·Á¼­ Á¦ÀÛÇÒ ¼öµµ ÀÖ°í, °¡Á®¿À±â¸¦ ÅëÇØ ±âÁ¸ ÀÌ¹ÌÁö¸¦ ºÒ·¯¿Ã ¼öµµ ÀÖ´Ù.
-		Ä¿¼­´Â Æ¯º°È÷ ÇÖ½ºÆý ¼³Á¤À» ÅëÇØ, ÀÔ·Â¹ÞÀ» Ä¿¼­ÀÇ Á¤È®ÇÑ À§Ä¡¸¦ ¼³Á¤ÇÒ ¼öµµ ÀÖ´Ù. ±×¸®±â µµ±¸¿¡ ÀÖ½À´Ï´Ù.
-
-
-		cf)	¸®¼Ò½º ÀÚ¿ø È°¿ëÀ» À§ÇÑ ¼¼ÆÃ
-			resource Çì´õ ÆÄÀÏÀ» ÀÎÅ¬·çµå ÇÕ´Ï´Ù.
-			#include "Resource.h¡°
+		ì•„ì´ì½˜, ì»¤ì„œ ì œìž‘
+		ë¦¬ì†ŒìŠ¤ ë“±ë¡ì„ í†µí•´ ì•„ì´ì½˜, ì»¤ì„œë¥¼ ì œìž‘í•˜ë©´ ì§ì ‘ ê·¸ë¦¼ì„ ê·¸ë ¤ì„œ ì œìž‘í•  ìˆ˜ë„ ìžˆê³ , ê°€ì ¸ì˜¤ê¸°ë¥¼ í†µí•´ ê¸°ì¡´ ì´ë¯¸ì§€ë¥¼ ë¶ˆëŸ¬ì˜¬ ìˆ˜ë„ ìžˆë‹¤.
+		ì»¤ì„œëŠ” íŠ¹ë³„ížˆ í•«ìŠ¤í¿ ì„¤ì •ì„ í†µí•´, ìž…ë ¥ë°›ì„ ì»¤ì„œì˜ ì •í™•í•œ ìœ„ì¹˜ë¥¼ ì„¤ì •í•  ìˆ˜ë„ ìžˆë‹¤. ê·¸ë¦¬ê¸° ë„êµ¬ì— ìžˆìŠµë‹ˆë‹¤.
 
 
+		cf)	ë¦¬ì†ŒìŠ¤ ìžì› í™œìš©ì„ ìœ„í•œ ì„¸íŒ…
+			resource í—¤ë” íŒŒì¼ì„ ì¸í´ë£¨ë“œ í•©ë‹ˆë‹¤.
+			#include "Resource.hâ€œ
 
-		MAKEINTRESOURCE ´Â ¸ÅÅ©·Î ÇÔ¼ö·Î¼­ Á¤¼ö¸¦ ¹®ÀÚ¿­ º¯¼ö·Î ¸¸µé¾îÁÖ´Â ±â´ÉÀ» ÇÑ´Ù.
-		À©µµ¿ìÁî API ÀÇ ¸®¼Ò½º °ü¸® ÇÔ¼öµéÀº ±× Àü´Þ ÀÎÀÚ·Î ¹®ÀÚ¿­À» ¹Þ´Â´Ù.
-		±×·¯³ª ¸®¼Ò½º ¹øÈ£´Â WORD Áï Á¤¼öÇüÀÌ¹Ç·Î ÀÌ°ÍÀ» º¯È¯ÇÑ´Ù.
-		¾ÆÀÌµð´Â resource.h ÆÄÀÏ¿¡ °¢°¢ Á¤¼öÇüÀ¸·Î define µÇ¾î ÀÖ´Ù.
-		¼Ò½º ÆÄÀÏ¿¡¼­ ¸®¼Ò½º ¾ÆÀÌµð¸¦ ÀÎ½ÄÇÏÁö ¸øÇÒ ¶§´Â Çì´õÆÄÀÏ¿¡ ¿Ã¹Ù¸£°Ô defineµÇ¾î ÀÖ´ÂÁö È®ÀÎÇÕ´Ï´Ù.
 
-		WndEx.hCursor = LoadCursor(hInstance, MAKEINTRESOURCE(Ä¿¼­ ¾ÆÀÌµð));
-		WndEx.hIconSm = LoadIcon(hInstance, MAKEINTRESOURCE(¾ÆÀÌÄÜ ¾ÆÀÌµð));
+
+		MAKEINTRESOURCE ëŠ” ë§¤í¬ë¡œ í•¨ìˆ˜ë¡œì„œ ì •ìˆ˜ë¥¼ ë¬¸ìžì—´ ë³€ìˆ˜ë¡œ ë§Œë“¤ì–´ì£¼ëŠ” ê¸°ëŠ¥ì„ í•œë‹¤.
+		ìœˆë„ìš°ì¦ˆ API ì˜ ë¦¬ì†ŒìŠ¤ ê´€ë¦¬ í•¨ìˆ˜ë“¤ì€ ê·¸ ì „ë‹¬ ì¸ìžë¡œ ë¬¸ìžì—´ì„ ë°›ëŠ”ë‹¤.
+		ê·¸ëŸ¬ë‚˜ ë¦¬ì†ŒìŠ¤ ë²ˆí˜¸ëŠ” WORD ì¦‰ ì •ìˆ˜í˜•ì´ë¯€ë¡œ ì´ê²ƒì„ ë³€í™˜í•œë‹¤.
+		ì•„ì´ë””ëŠ” resource.h íŒŒì¼ì— ê°ê° ì •ìˆ˜í˜•ìœ¼ë¡œ define ë˜ì–´ ìžˆë‹¤.
+		ì†ŒìŠ¤ íŒŒì¼ì—ì„œ ë¦¬ì†ŒìŠ¤ ì•„ì´ë””ë¥¼ ì¸ì‹í•˜ì§€ ëª»í•  ë•ŒëŠ” í—¤ë”íŒŒì¼ì— ì˜¬ë°”ë¥´ê²Œ defineë˜ì–´ ìžˆëŠ”ì§€ í™•ì¸í•©ë‹ˆë‹¤.
+
+		WndEx.hCursor = LoadCursor(hInstance, MAKEINTRESOURCE(ì»¤ì„œ ì•„ì´ë””));
+		WndEx.hIconSm = LoadIcon(hInstance, MAKEINTRESOURCE(ì•„ì´ì½˜ ì•„ì´ë””));
 	*/
 
-	// WNDCLASSEX¿¡ ÁöÁ¤µÈ °ªµéÀ» ·¹Áö½ºÅÍ¿¡ µî·ÏÇÑ´Ù.
+	// WNDCLASSEXì— ì§€ì •ëœ ê°’ë“¤ì„ ë ˆì§€ìŠ¤í„°ì— ë“±ë¡í•œë‹¤.
 	RegisterClassEx(&WndEx);
 
-	// À©µµ¿ì¸¦ »ý¼ºÇÑ´Ù.
-	g_hWnd = CreateWindowEx(NULL,				// À©µµ¿ìÀÇ ½ºÅ¸ÀÏÀ» ÁöÁ¤ÇÑ´Ù.
-					szClass,					// À©µµ¿ìÀÇ Å¬·¡½º¸¦ ÁöÁ¤ÇÑ´Ù.
-					szTitle,					// À©µµ¿ìÀÇ Ä¸¼ÇÀ» ÁöÁ¤ÇÑ´Ù.
-					WS_OVERLAPPEDWINDOW,		// À©µµ¿ìÀÇ ½ºÅ¸ÀÏÀ» ÁöÁ¤ÇÑ´Ù.
-					0,							// À©µµ¿ìÀÇ xÁÂÇ¥ À§Ä¡¸¦ ÁöÁ¤ÇÑ´Ù.
-					0,							// À©µµ¿ìÀÇ yÁÂÇ¥ À§Ä¡¸¦ ÁöÁ¤ÇÑ´Ù.
-					640,						// À©µµ¿ìÀÇ ³ÐÀÌ¸¦ 640À¸·Î ÁöÁ¤ÇÏ¿´´Ù.
-					600,						// À©µµ¿ìÀÇ ³ôÀÌ¸¦ 600À¸·Î ÁöÁ¤ÇÏ¿´´Ù.
-					NULL,						// À©µµ¿ì¸¦ Æ÷ÇÔÇÏ°í ÀÖ´Â ´Ù¸¥ À©µµ¿ì°¡ ¾øÀ¸¹Ç·Î NULL °ªÀ¸·Î ÁöÁ¤ÇÏ¿´´Ù.
-					NULL,						// ¸Þ´º°¡ ¾øÀ¸¹Ç·Î NULL °ªÀ¸·Î ÁöÁ¤ÇÏ¿´´Ù.
-					hInstance,					// ÀÎ½ºÅÏ½º ÇÚµéÀ» ÁöÁ¤ÇÑ´Ù.
-					NULL);						// Àß ¾²ÀÌÁö ¾Ê´Â´Ù.
+	// ìœˆë„ìš°ë¥¼ ìƒì„±í•œë‹¤.
+	g_hWnd = CreateWindowEx(NULL,				// ìœˆë„ìš°ì˜ ìŠ¤íƒ€ì¼ì„ ì§€ì •í•œë‹¤.
+					szClass,					// ìœˆë„ìš°ì˜ í´ëž˜ìŠ¤ë¥¼ ì§€ì •í•œë‹¤.
+					szTitle,					// ìœˆë„ìš°ì˜ ìº¡ì…˜ì„ ì§€ì •í•œë‹¤.
+					WS_OVERLAPPEDWINDOW,		// ìœˆë„ìš°ì˜ ìŠ¤íƒ€ì¼ì„ ì§€ì •í•œë‹¤.
+					0,							// ìœˆë„ìš°ì˜ xì¢Œí‘œ ìœ„ì¹˜ë¥¼ ì§€ì •í•œë‹¤.
+					0,							// ìœˆë„ìš°ì˜ yì¢Œí‘œ ìœ„ì¹˜ë¥¼ ì§€ì •í•œë‹¤.
+					640,						// ìœˆë„ìš°ì˜ ë„“ì´ë¥¼ 640ìœ¼ë¡œ ì§€ì •í•˜ì˜€ë‹¤.
+					600,						// ìœˆë„ìš°ì˜ ë†’ì´ë¥¼ 600ìœ¼ë¡œ ì§€ì •í•˜ì˜€ë‹¤.
+					NULL,						// ìœˆë„ìš°ë¥¼ í¬í•¨í•˜ê³  ìžˆëŠ” ë‹¤ë¥¸ ìœˆë„ìš°ê°€ ì—†ìœ¼ë¯€ë¡œ NULL ê°’ìœ¼ë¡œ ì§€ì •í•˜ì˜€ë‹¤.
+					NULL,						// ë©”ë‰´ê°€ ì—†ìœ¼ë¯€ë¡œ NULL ê°’ìœ¼ë¡œ ì§€ì •í•˜ì˜€ë‹¤.
+					hInstance,					// ì¸ìŠ¤í„´ìŠ¤ í•¸ë“¤ì„ ì§€ì •í•œë‹¤.
+					NULL);						// ìž˜ ì“°ì´ì§€ ì•ŠëŠ”ë‹¤.
 
-	// À©µµ¿ì°¡ ½ÇÁ¦·Î º¸¿©Áú ÇüÅÂ¸¦ ÁöÁ¤ÇÑ´Ù.
+	// ìœˆë„ìš°ê°€ ì‹¤ì œë¡œ ë³´ì—¬ì§ˆ í˜•íƒœë¥¼ ì§€ì •í•œë‹¤.
 	ShowWindow(g_hWnd, nShowCmd);
-	// À©µµ¿ì¸¦ °»½ÅÇÏ°í WM_PAINT ¸Þ½ÃÁö¸¦ È£ÃâÇÑ´Ù.
+	// ìœˆë„ìš°ë¥¼ ê°±ì‹ í•˜ê³  WM_PAINT ë©”ì‹œì§€ë¥¼ í˜¸ì¶œí•œë‹¤.
 	UpdateWindow(g_hWnd);
 
-	// ¸Þ½ÃÁö Ã³¸®¸¦ À§ÇÑ ¹Ýº¹¹® ½ÃÀÛ
+	// ë©”ì‹œì§€ ì²˜ë¦¬ë¥¼ ìœ„í•œ ë°˜ë³µë¬¸ ì‹œìž‘
 	while (TRUE)
 	{
-		// ¸Þ½ÃÁö Å¥¿¡ µé¾î¿Â ¸Þ½ÃÁö°¡ ÀÖ´ÂÁö È®ÀÎÇÑ´Ù.
+		// ë©”ì‹œì§€ íì— ë“¤ì–´ì˜¨ ë©”ì‹œì§€ê°€ ìžˆëŠ”ì§€ í™•ì¸í•œë‹¤.
 		if (PeekMessage(&mSg, NULL, 0, 0, PM_NOREMOVE))
 		{
-			// ¸¸¾à ¸Þ½ÃÁö°¡ ÀÖÀ¸¸é MSG ±¸Á¶Ã¼¿¡¼­ ¸Þ½ÃÁö¸¦ ÀÐ¾î¿Â´Ù.
+			// ë§Œì•½ ë©”ì‹œì§€ê°€ ìžˆìœ¼ë©´ MSG êµ¬ì¡°ì²´ì—ì„œ ë©”ì‹œì§€ë¥¼ ì½ì–´ì˜¨ë‹¤.
 			if (!GetMessage(&mSg, NULL, 0, 0))
-				break;	// ¸Þ½ÃÁö Áß¿¡ WM_QUIT¸Þ½ÃÁö°¡ ÀÖÀ¸¸é ºüÁ®³ª°£´Ù.
-			// °¡»óÅ°°¡ ¹ß»ýÇÏ¸é ±× ¸Þ½ÃÁö¸¦ ¹Þ¾Æ¿Í¼­ WM_CHAR¿¡ ÇØ´çÇÏ´Â ÄÚµå¸¦ ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ¸Þ½ÃÁö Å¥¿¡ ³Ö¾î µÐ´Ù.
+				break;	// ë©”ì‹œì§€ ì¤‘ì— WM_QUITë©”ì‹œì§€ê°€ ìžˆìœ¼ë©´ ë¹ ì ¸ë‚˜ê°„ë‹¤.
+			// ê°€ìƒí‚¤ê°€ ë°œìƒí•˜ë©´ ê·¸ ë©”ì‹œì§€ë¥¼ ë°›ì•„ì™€ì„œ WM_CHARì— í•´ë‹¹í•˜ëŠ” ì½”ë“œë¥¼ ì‘ìš© í”„ë¡œê·¸ëž¨ì˜ ë©”ì‹œì§€ íì— ë„£ì–´ ë‘”ë‹¤.
 			TranslateMessage(&mSg);
-			// ±× ¸Þ½ÃÁöµéÀ» Ã³¸®ÇÏ±â À§ÇØ WndProc() ÇÔ¼ö·Î º¸³½´Ù.
+			// ê·¸ ë©”ì‹œì§€ë“¤ì„ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ WndProc() í•¨ìˆ˜ë¡œ ë³´ë‚¸ë‹¤.
 			DispatchMessage(&mSg);
 		}
 	}
 
-	// ±âÅ¸ ºÎ¼öÀûÀÎ ¸Þ½ÃÁö¸¦ ¹ÝÈ¯ÇÑ´Ù.
+	// ê¸°íƒ€ ë¶€ìˆ˜ì ì¸ ë©”ì‹œì§€ë¥¼ ë°˜í™˜í•œë‹¤.
 	return mSg.wParam;
 }
 
-// ¸Þ½ÃÁö¸¦ Ã³¸®ÇÏ±â À§ÇØ¼­ ¸Þ½ÃÁö Ã³¸® ÇÔ¼ö¸¦ Á¤ÀÇÇÑ´Ù.
+// ë©”ì‹œì§€ë¥¼ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ì„œ ë©”ì‹œì§€ ì²˜ë¦¬ í•¨ìˆ˜ë¥¼ ì •ì˜í•œë‹¤.
 LRESULT CALLBACK WndProc(HWND hWnd,
 					UINT uMsg,
 					WPARAM wParam,
 					LPARAM lParam)
 {
-	// uMsg º¯¼ö¿¡´Â DispatchMessage() ÇÔ¼ö¿¡¼­ º¸³½ ¸Þ½ÃÁöµéÀÌ ÀúÀåµÇ¾î ÀÖ´Ù.
+	// uMsg ë³€ìˆ˜ì—ëŠ” DispatchMessage() í•¨ìˆ˜ì—ì„œ ë³´ë‚¸ ë©”ì‹œì§€ë“¤ì´ ì €ìž¥ë˜ì–´ ìžˆë‹¤.
 	switch (uMsg)
 	{
-		// À©µµ¿ìÀÇ ¸Þ´º°¡ Å¬¸¯ µÇ¾úÀ»¶§ Àü´ÞµÇ´Â ¸Þ½ÃÁö.
+		// ìœˆë„ìš°ì˜ ë©”ë‰´ê°€ í´ë¦­ ë˜ì—ˆì„ë•Œ ì „ë‹¬ë˜ëŠ” ë©”ì‹œì§€.
 		case WM_COMMAND:
-			// Àü´ÞµÈ µ¥ÀÌÅ¸¸¦ ÇÏÀ§ ¿öµå·Î Àß¶ó¼­ ...
+			// ì „ë‹¬ëœ ë°ì´íƒ€ë¥¼ í•˜ìœ„ ì›Œë“œë¡œ ìž˜ë¼ì„œ ...
 			switch (LOWORD(wParam))
 			{
-				// ¸Þ´ºÀÇ [File] -> [Start]°¡ Å¬¸¯µÇ¸é...(´ÜÃàÅ° alt + F + S ¼ø¼­´ë·Î...)
+				// ë©”ë‰´ì˜ [File] -> [Start]ê°€ í´ë¦­ë˜ë©´...(ë‹¨ì¶•í‚¤ alt + F + S ìˆœì„œëŒ€ë¡œ...)
 				case FILE_START:
 					if (PlayerState == DEAD)
 					{
-						// ¹è°æ ºí·ÏÀÇ ¸ð¾çÀ» ÃÊ±âÈ­ÇÑ´Ù.
+						// ë°°ê²½ ë¸”ë¡ì˜ ëª¨ì–‘ì„ ì´ˆê¸°í™”í•œë‹¤.
 						InitBackGround();
-						// ÀÌ ÇÔ¼ö¸¦ ÀÌ¿ëÇÏ¿© 1ÀÌ µé¾î°£ °÷¿¡ »ç°¢ÇüÀ» Ãâ·ÂÇÑ´Ù. Áï °æ°è ÁÙÀ» ±×¸°´Ù.
+						// ì´ í•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ 1ì´ ë“¤ì–´ê°„ ê³³ì— ì‚¬ê°í˜•ì„ ì¶œë ¥í•œë‹¤. ì¦‰ ê²½ê³„ ì¤„ì„ ê·¸ë¦°ë‹¤.
 						DrawBackGround();
-						// ÇÃ·¹ÀÌ¾î »óÅÂ¸¦ ÃÊ±âÈ­ ÇÑ´Ù.(ALIVE)
+						// í”Œë ˆì´ì–´ ìƒíƒœë¥¼ ì´ˆê¸°í™” í•œë‹¤.(ALIVE)
 						PlayerState = ALIVE;
-						// ÇöÀç ºí·ÏÀÇ °ªÀ» ¼¼ÆÃÇÑ´Ù ¢¹ 
+						// í˜„ìž¬ ë¸”ë¡ì˜ ê°’ì„ ì„¸íŒ…í•œë‹¤ â–· 
 						BlockNum = rand() % 7;
-						// ´ÙÀ½ ºí·ÏÀÇ °ªÀ» ¼ÂÆÃÇÑ´Ù.
+						// ë‹¤ìŒ ë¸”ë¡ì˜ ê°’ì„ ì…‹íŒ…í•œë‹¤.
 						NextBlockNum = rand() % 7;
-						// ºí·ÏÀÇ ÇÑ ÁÙÀÌ ´Ù Ã¤¿öÁ³À» °æ¿ì (Á¡¼ö)
+						// ë¸”ë¡ì˜ í•œ ì¤„ì´ ë‹¤ ì±„ì›Œì¡Œì„ ê²½ìš° (ì ìˆ˜)
 						FullLineNum = 0;
 						
 
-						// ¸Þ½ÃÁö¸¦ ¹ß»ý ½ÃÅ²´Ù.
+						// ë©”ì‹œì§€ë¥¼ ë°œìƒ ì‹œí‚¨ë‹¤.
 						SendMessage(hWnd, WM_NewBlock, 0, 0);
 					}
 
-					// Å¸ÀÓÀÌ ON ÀÌ¸é
+					// íƒ€ìž„ì´ ON ì´ë©´
 					if (bTime == ON)
 					{
-						// ÇØ´ç ¾ÆÀÌµð¿¡ Å¸ÀÌ¸Ó¸¦ Á¦°Å(Á¤Áö)ÇÑ´Ù.
+						// í•´ë‹¹ ì•„ì´ë””ì— íƒ€ì´ë¨¸ë¥¼ ì œê±°(ì •ì§€)í•œë‹¤.
 						KillTimer(hWnd, 3);
 						bTime = OFF;
 					}
 					else
 					{
-						// Å¸ÀÌ¸Ó¸¦ ¼³Ä¡...Áï ÇØ´ç ¾ÆÀÌµð·Î Å¸ÀÌ¸Ó¸¦ Ãâ·ÂÇÑ´Ù.(»ý¼ºÇÑ´Ù.)
-						// Å¸ÀÌ¸ÓÀÇ ¾ÆÀÌµð´Â wParam¿¡ ÀúÀåµÈ´Ù.(¸Þ½ÃÁö ¹ß»ý½Ã...)
-						SetTimer(hWnd, 3, 1000, NULL); // 1ÃÊ¸¶´Ù WM_TIMER ¸Þ½ÃÁö ¹ß»ý.(?)
-						// 6(0)ÃÊ ÈÄ Àå¾Ö¹° »ý¼º Å¸ÀÌ¸Ó ¼¼ÆÃ ¢¹
+						// íƒ€ì´ë¨¸ë¥¼ ì„¤ì¹˜...ì¦‰ í•´ë‹¹ ì•„ì´ë””ë¡œ íƒ€ì´ë¨¸ë¥¼ ì¶œë ¥í•œë‹¤.(ìƒì„±í•œë‹¤.)
+						// íƒ€ì´ë¨¸ì˜ ì•„ì´ë””ëŠ” wParamì— ì €ìž¥ëœë‹¤.(ë©”ì‹œì§€ ë°œìƒì‹œ...)
+						SetTimer(hWnd, 3, 1000, NULL); // 1ì´ˆë§ˆë‹¤ WM_TIMER ë©”ì‹œì§€ ë°œìƒ.(?)
+						// 6(0)ì´ˆ í›„ ìž¥ì• ë¬¼ ìƒì„± íƒ€ì´ë¨¸ ì„¸íŒ… â–·
 						SetTimer(hWnd, 5, 6000, NULL);
-						// Å¸ÀÓÀ» ONÀ¸·Î ¼ÂÆÃ
+						// íƒ€ìž„ì„ ONìœ¼ë¡œ ì…‹íŒ…
 						bTime = ON;
 					}
 					break;
-				// ¸Þ´ºÀÇ [File] -> [EXIT]ÀÌ Å¬¸¯µÇ¸é...(´ÜÃàÅ° alt + F + E ¼ø¼­´ë·Î...)
+				// ë©”ë‰´ì˜ [File] -> [EXIT]ì´ í´ë¦­ë˜ë©´...(ë‹¨ì¶•í‚¤ alt + F + E ìˆœì„œëŒ€ë¡œ...)
 				case FILE_EXIT:
-					// À©µµ¿ì¸¦ Á¾·á(ÆÄ±«)ÇÑ´Ù.
+					// ìœˆë„ìš°ë¥¼ ì¢…ë£Œ(íŒŒê´´)í•œë‹¤.
 					DestroyWindow(hWnd);
 					break;
 			}
 			return FALSE;
 
-		/* ÀÌ ¸Þ½ÃÁö´Â »õ·Î¿î ºí·ÏÀÌ µé¾î¿Ã ¶§ ¹ß»ýÇÑ´Ù.
-		   ¿©±â¼­´Â »õ·Î¿î ºí·ÏÀ» ÀÔ±¸¿¡ ±×·ÁÁÖ°í
-		   ´ÙÀ½ ºí·Ï ¶ÇÇÑ À©µµ¿ìÀÇ ¿À¸¥ÂÊ¿¡ ±×·ÁÁØ´Ù.*/
+		/* ì´ ë©”ì‹œì§€ëŠ” ìƒˆë¡œìš´ ë¸”ë¡ì´ ë“¤ì–´ì˜¬ ë•Œ ë°œìƒí•œë‹¤.
+		   ì—¬ê¸°ì„œëŠ” ìƒˆë¡œìš´ ë¸”ë¡ì„ ìž…êµ¬ì— ê·¸ë ¤ì£¼ê³ 
+		   ë‹¤ìŒ ë¸”ë¡ ë˜í•œ ìœˆë„ìš°ì˜ ì˜¤ë¥¸ìª½ì— ê·¸ë ¤ì¤€ë‹¤.*/
 		case WM_NewBlock:
-			// ºí·°ÀÇ ÇöÀç xÁÂÇ¥
+			// ë¸”ëŸ­ì˜ í˜„ìž¬ xì¢Œí‘œ
 			NowX = 3;
-			// ºí·°ÀÇ ÇöÀç yÁÂÇ¥
+			// ë¸”ëŸ­ì˜ í˜„ìž¬ yì¢Œí‘œ
 			NowY = 0;
-			// ºí·ÏÀÇ È¸Àü Á¾·ù (±âº»°ª ½ÃÀÛ)
+			// ë¸”ë¡ì˜ íšŒì „ ì¢…ë¥˜ (ê¸°ë³¸ê°’ ì‹œìž‘)
 			RotateNum = 0;
-			// ÀÌ¹ø¿¡ ³ª¿Ã ºí·Ï
+			// ì´ë²ˆì— ë‚˜ì˜¬ ë¸”ë¡
 			BlockNum = NextBlockNum;
-			// ´ÙÀ½¿¡ ³ª¿Ã ºí·Ï
+			// ë‹¤ìŒì— ë‚˜ì˜¬ ë¸”ë¡
 			NextBlockNum = rand() % 7;
-			// ¸Å ÅÏ¸¶´Ù Hold ÇÔ¼ö ÃÊ±âÈ­ ¢¹ 
+			// ë§¤ í„´ë§ˆë‹¤ Hold í•¨ìˆ˜ ì´ˆê¸°í™” â–· 
 			isHoldUsed = FALSE;
 
-			// Ghostºí·ÏÀ» ¸ÕÀú ±×·ÁÁØ ÈÄ ¢¹
+			// Ghostë¸”ë¡ì„ ë¨¼ì € ê·¸ë ¤ì¤€ í›„ â–·
 			DrawGhostBlock();
-			// Ghostºí·ÏÀÇ yÁÂÇ¥¸¦ ÀÌÀü ÁÂÇ¥¿¡ ´ëÀÔ ¢¹
+			// Ghostë¸”ë¡ì˜ yì¢Œí‘œë¥¼ ì´ì „ ì¢Œí‘œì— ëŒ€ìž… â–·
 			PreGhostY = GhostY;
-			// »õ ºí·ÏÀ» ÀÔ±¸¿¡ ±×¸°´Ù.
+			// ìƒˆ ë¸”ë¡ì„ ìž…êµ¬ì— ê·¸ë¦°ë‹¤.
 			DrawBlock();
-			// ´ÙÀ½¿¡ ³ª¿Ã ºí·ÏÀ» ±×¸°´Ù.
+			// ë‹¤ìŒì— ë‚˜ì˜¬ ë¸”ë¡ì„ ê·¸ë¦°ë‹¤.
 			DrawNextBlock();
 
 			/*
-				»õ ºí·ÏÀÌ ³ª¿Ã ¼ö ¾øÀ¸¸é
-				Áï! ºí·ÏÀÌ ÀÔ±¸±îÁö °¡µæ Â÷ ÀÖÀ¸¸é...
+				ìƒˆ ë¸”ë¡ì´ ë‚˜ì˜¬ ìˆ˜ ì—†ìœ¼ë©´
+				ì¦‰! ë¸”ë¡ì´ ìž…êµ¬ê¹Œì§€ ê°€ë“ ì°¨ ìžˆìœ¼ë©´...
 			*/
 			if (!BlockCanMove(NowX, NowY))
-				// °ÔÀÓÀ» Á¾·áÇÑ´Ù.
+				// ê²Œìž„ì„ ì¢…ë£Œí•œë‹¤.
 				PlayerState = DEAD;
 
 			return FALSE;
 
-		// Å°º¸µåÀÇ Å°°¡ Å¬¸¯µÇ¸é
+		// í‚¤ë³´ë“œì˜ í‚¤ê°€ í´ë¦­ë˜ë©´
 		case WM_KEYDOWN:
 			switch (LOWORD(wParam))
 			{
-				// ¹æÇâÅ° LEFT
+				// ë°©í–¥í‚¤ LEFT
 				case VK_LEFT:
-					// ºí·Ï ÁÂÃø ÀÌµ¿
+					// ë¸”ë¡ ì¢Œì¸¡ ì´ë™
 					LeftMove();
 					break;
-				// ¹æÇâÅ° RIGHT
+				// ë°©í–¥í‚¤ RIGHT
 				case VK_RIGHT:
-					// ºí·Ï ¿ìÃø ÀÌµ¿
+					// ë¸”ë¡ ìš°ì¸¡ ì´ë™
 					RightMove();
 					break;
-				// ¹æÇâÅ° UP
+				// ë°©í–¥í‚¤ UP
 				case VK_UP:
-					// ºí·Ï È¸Àü
+					// ë¸”ë¡ íšŒì „
 					Rotate();
 					break;
-				// ¹æÇâÅ° DOWN
+				// ë°©í–¥í‚¤ DOWN
 				case VK_DOWN:
-					// ºí·Ï ³»¸®±â
+					// ë¸”ë¡ ë‚´ë¦¬ê¸°
 					DownMove();
 					break;
-				// SPACEÅ°
+				// SPACEí‚¤
 				case VK_SPACE:
-					// ºí·Ï ÇÑ¹ø¿¡ ³»¸®±â
+					// ë¸”ë¡ í•œë²ˆì— ë‚´ë¦¬ê¸°
 					while ( DownMove() );
 					break;
-				// C Å° ¢¹
+				// C í‚¤ â–·
 				case 'C':
-					// ÇöÀç ºí·Ï ÀúÀå
+					// í˜„ìž¬ ë¸”ë¡ ì €ìž¥
 					Hold();
 					break;
 			}
 
 			return FALSE;
 
-		// WM_TIMER ¸Þ½ÃÁö°¡ ¹ß»ýÇÏ¸é (ÀÏÁ¤ ½Ã°£ °£°ÝÀ¸·Î ¸Þ½ÃÁö°¡ Àü´Þ...(1000Àº 1ÃÊ´Ù))
+		// WM_TIMER ë©”ì‹œì§€ê°€ ë°œìƒí•˜ë©´ (ì¼ì • ì‹œê°„ ê°„ê²©ìœ¼ë¡œ ë©”ì‹œì§€ê°€ ì „ë‹¬...(1000ì€ 1ì´ˆë‹¤))
 		case WM_TIMER:
-			// 3¹ø Å¸ÀÌ¸Ó : ºí·Ï »ý¼º ¢¹
+			// 3ë²ˆ íƒ€ì´ë¨¸ : ë¸”ë¡ ìƒì„± â–·
 			if (wParam == 3)
 			{
-				// ÇÃ·¹ÀÌ¾î°¡ »ì¾ÆÀÖÀ»¶§ 
+				// í”Œë ˆì´ì–´ê°€ ì‚´ì•„ìžˆì„ë•Œ 
 				if (PlayerState == ALIVE)
-					// ºí·ÏÀ» ¾Æ·¡µµ °è¼Ó ³»¸°´Ù.
+					// ë¸”ë¡ì„ ì•„ëž˜ë„ ê³„ì† ë‚´ë¦°ë‹¤.
 					DownMove();
-				// Å¸ÀÓ º¯¼ö°¡ ON ÀÏ¶§
+				// íƒ€ìž„ ë³€ìˆ˜ê°€ ON ì¼ë•Œ
 				else if (bTime == ON)
 				{
-					// ´ÙÀ½ ½ÃÀÛÀ» À§ÇØ ¸®¼Â
+					// ë‹¤ìŒ ì‹œìž‘ì„ ìœ„í•´ ë¦¬ì…‹
 					bTime = OFF;
-					// ÇØ´ç ¾ÆÀÌµð¿¡ Å¸ÀÌ¸Ó¸¦ Á¦°Å(Á¤Áö)ÇÑ´Ù.
+					// í•´ë‹¹ ì•„ì´ë””ì— íƒ€ì´ë¨¸ë¥¼ ì œê±°(ì •ì§€)í•œë‹¤.
 					KillTimer(hWnd, 3);
 				}
 			}
-			// 4¹ø Å¸ÀÌ¸Ó : Àå¾Ö¹° »ý¼º Å¸ÀÌ¸Ó ¢¹
+			// 4ë²ˆ íƒ€ì´ë¨¸ : ìž¥ì• ë¬¼ ìƒì„± íƒ€ì´ë¨¸ â–·
 			if (wParam == 4)
 			{
-				// 5ÃÊ ¸¶´Ù Àå¾Ö¹° »ý¼º ¢¹
-				// InitObstacle(); // ¢¹
+				// 5ì´ˆ ë§ˆë‹¤ ìž¥ì• ë¬¼ ìƒì„± â–·
+				// InitObstacle(); // â–·
 				/*Obstacle();
 
 				CheckFullLine();*/
 			}
-			// 5¹ø Å¸ÀÌ¸Ó : 6(0)ÃÊ ÈÄ Àå¾Ö¹° »ý¼º ¢¹ 
+			// 5ë²ˆ íƒ€ì´ë¨¸ : 6(0)ì´ˆ í›„ ìž¥ì• ë¬¼ ìƒì„± â–· 
 			else if (wParam == 5)
 			{
-				// 1È¸ Å¸ÀÌ¸Ó Á¦°Å ¢¹ 
+				// 1íšŒ íƒ€ì´ë¨¸ ì œê±° â–· 
 				KillTimer(hWnd, 5); 
 				
-				// 10ÃÊ¸¶´Ù Àå¾Ö¹°À» »ý¼ºÇÏ´Â 4¹ø Å¸ÀÌ¸Ó ¢¹
+				// 10ì´ˆë§ˆë‹¤ ìž¥ì• ë¬¼ì„ ìƒì„±í•˜ëŠ” 4ë²ˆ íƒ€ì´ë¨¸ â–·
 				SetTimer(hWnd, 4, 3000, NULL);
 			}
 
 			return FALSE;
 
-		// uMsg º¯¼ö¿¡ WM_DESTROY¸Þ½ÃÁö°¡ ÀÖÀ¸¸é
+		// uMsg ë³€ìˆ˜ì— WM_DESTROYë©”ì‹œì§€ê°€ ìžˆìœ¼ë©´
 		case WM_DESTROY:
-			// Á¾·á Àü Å¸ÀÓ ON ÀÏ¶§
+			// ì¢…ë£Œ ì „ íƒ€ìž„ ON ì¼ë•Œ
 			if (bTime == ON)
-				// ÇØ´ç ¾ÆÀÌµð¿¡ Å¸ÀÌ¸Ó¸¦ Á¦°ÅÇÑ´Ù.
+				// í•´ë‹¹ ì•„ì´ë””ì— íƒ€ì´ë¨¸ë¥¼ ì œê±°í•œë‹¤.
 				KillTimer(hWnd, 3);
 
-			// À©µµ¿ì¸¦ Á¾·áÇÑ´Ù.
+			// ìœˆë„ìš°ë¥¼ ì¢…ë£Œí•œë‹¤.
 			PostQuitMessage(0);
 
 			return FALSE;
 	}
-	// ¹ÌÃ³ Ã³¸®ÇÏÁö ¸øÇÑ ¸Þ½ÃÁöµéÀ» WndProcÇÔ¼ö·Î º¸³»¾î È®½ÇÈ÷ Ã³¸®µÇ¾îÁöµµ·Ï ÇÑ´Ù.
+	// ë¯¸ì²˜ ì²˜ë¦¬í•˜ì§€ ëª»í•œ ë©”ì‹œì§€ë“¤ì„ WndProcí•¨ìˆ˜ë¡œ ë³´ë‚´ì–´ í™•ì‹¤ížˆ ì²˜ë¦¬ë˜ì–´ì§€ë„ë¡ í•œë‹¤.
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
-// ¾Æ·¡ÀÇ ÇÔ¼ö´Â »ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö·Î¼­ ¹è°æ ºí·ÏÀÇ ¸ð¾çÀ» ÃÊ±âÈ­ÇÑ´Ù.
-// ÀÌ ÇÔ¼ö´Â ÇÔ¼öÀÇ ºí·ÏÀÌ ¿òÁ÷ÀÌ´Â °ø°£À» ¸¸µé¾î ÁÖ´Â °ÍÀ¸·Î ¸Å¿ì Áß¿äÇÏ´Ù.
+// ì•„ëž˜ì˜ í•¨ìˆ˜ëŠ” ì‚¬ìš©ìž ì •ì˜ í•¨ìˆ˜ë¡œì„œ ë°°ê²½ ë¸”ë¡ì˜ ëª¨ì–‘ì„ ì´ˆê¸°í™”í•œë‹¤.
+// ì´ í•¨ìˆ˜ëŠ” í•¨ìˆ˜ì˜ ë¸”ë¡ì´ ì›€ì§ì´ëŠ” ê³µê°„ì„ ë§Œë“¤ì–´ ì£¼ëŠ” ê²ƒìœ¼ë¡œ ë§¤ìš° ì¤‘ìš”í•˜ë‹¤.
 void InitBackGround()
 {
-	// Àç ½ÇÇàÀ» À§ÇÑ ÃÊ±âÈ­¸¦ ÇÑ´Ù./////////////////////////////////
+	// ìž¬ ì‹¤í–‰ì„ ìœ„í•œ ì´ˆê¸°í™”ë¥¼ í•œë‹¤./////////////////////////////////
 	InvalidateRect(g_hWnd, NULL, TRUE);
-	// UpdateWindow ¾ÈÇÏ¸é ¹è°æÀÌ ¾È±×·ÁÁü Å×½ºÆ® ÇØº¸ÀÚ~ÀÌÀ¯ ¾Ë±â~
+	// UpdateWindow ì•ˆí•˜ë©´ ë°°ê²½ì´ ì•ˆê·¸ë ¤ì§ í…ŒìŠ¤íŠ¸ í•´ë³´ìž~ì´ìœ  ì•Œê¸°~
 	UpdateWindow(g_hWnd);
 
-	// ¹è°æ 0À¸·Î ÃÊ±âÈ­
+	// ë°°ê²½ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 	for (int row = 0; row < 21; row++)
 		for (int col = 0; col < 12; col++)
 		{
@@ -674,284 +674,284 @@ void InitBackGround()
 		}
 	///////////////////////////////////////////////////////////////
 
-	// ¾Æ·¡ µÎ ¹Ýº¹¹®Àº ¹è°æ ºí·ÏÀÇ °ªÀ» ¼ÂÆÃÇÑ´Ù.
+	// ì•„ëž˜ ë‘ ë°˜ë³µë¬¸ì€ ë°°ê²½ ë¸”ë¡ì˜ ê°’ì„ ì…‹íŒ…í•œë‹¤.
 	for (int row = 0; row < 21; row++)
 		for (int col = 0; col < 12; col++)
 		{
 			/*
-				row°ªÀÌ 20ÀÌ¸é BackGround[row][col] °ª¿¡ 1À» ³Ö´Â´Ù. Áï ¹è°æÀÇ ¹ØÁÙÀ» ±×·ÁÁØ´Ù.
-				±×¸®°í ¶ÇÇÑ ºí·ÏÀ» ¹ØÁÙ ¹ÛÀ¸·Î ¹þ¾î³ªÁö ¸øÇÏµµ·Ï ÇØ¾ß ÇÑ´Ù.
+				rowê°’ì´ 20ì´ë©´ BackGround[row][col] ê°’ì— 1ì„ ë„£ëŠ”ë‹¤. ì¦‰ ë°°ê²½ì˜ ë°‘ì¤„ì„ ê·¸ë ¤ì¤€ë‹¤.
+				ê·¸ë¦¬ê³  ë˜í•œ ë¸”ë¡ì„ ë°‘ì¤„ ë°–ìœ¼ë¡œ ë²—ì–´ë‚˜ì§€ ëª»í•˜ë„ë¡ í•´ì•¼ í•œë‹¤.
 			*/
 			if (row == 20)
 				BackGround[row][col] = 1;
 			/*
-				col °ªÀÌ 0ÀÌ¸é BackGround[row][col] °ª¿¡ 1À» ³Ö´Â´Ù. Áï ¹è°æÀÇ ¿ÞÂÊ ÁÙÀ» ±×·ÁÁØ´Ù.
-				±×¸®°í ¶ÇÇÑ ºí·ÏÀ» ¿ÞÂÊ ÁÙ¹ÛÀ¸·Î ¹þ¾î³ªÁö ¸øÇÏµµ·Ï ÇØ¾ß ÇÑ´Ù.
+				col ê°’ì´ 0ì´ë©´ BackGround[row][col] ê°’ì— 1ì„ ë„£ëŠ”ë‹¤. ì¦‰ ë°°ê²½ì˜ ì™¼ìª½ ì¤„ì„ ê·¸ë ¤ì¤€ë‹¤.
+				ê·¸ë¦¬ê³  ë˜í•œ ë¸”ë¡ì„ ì™¼ìª½ ì¤„ë°–ìœ¼ë¡œ ë²—ì–´ë‚˜ì§€ ëª»í•˜ë„ë¡ í•´ì•¼ í•œë‹¤.
 			*/
 			else if (col == 0)
 				BackGround[row][col] = 1;
 			/*
-				col °ªÀÌ 11ÀÌ¸é BackGround[row][col] °ª¿¡ 1À» ³Ö´Â´Ù. Áï ¹è°æÀÇ ¿À¸¥ÂÊ ÁÙÀ» ±×·ÁÁØ´Ù.
-				±×¸®°í ¶ÇÇÑ ºí·ÏÀ» ¿À¸¥ÂÊ ÁÙ¹ÛÀ¸·Î ¹þ¾î³ªÁö ¸øÇÏµµ·Ï ÇØ¾ß ÇÑ´Ù.
+				col ê°’ì´ 11ì´ë©´ BackGround[row][col] ê°’ì— 1ì„ ë„£ëŠ”ë‹¤. ì¦‰ ë°°ê²½ì˜ ì˜¤ë¥¸ìª½ ì¤„ì„ ê·¸ë ¤ì¤€ë‹¤.
+				ê·¸ë¦¬ê³  ë˜í•œ ë¸”ë¡ì„ ì˜¤ë¥¸ìª½ ì¤„ë°–ìœ¼ë¡œ ë²—ì–´ë‚˜ì§€ ëª»í•˜ë„ë¡ í•´ì•¼ í•œë‹¤.
 			*/
 			else if (col == 11)
 				BackGround[row][col] = 1;
 			/*
-				À§ÀÇ if¹®¿¡ ÇØ´çÇÏÁö ¾ÊÀ¸¸é ¸ðµÎ 0 °ªÀ» ³Ö´Â´Ù. 0 °ªÀÌ µé¾î°£ °÷Àº ºí·ÏÀÌ ¿òÁ÷ÀÏ °ø°£ÀÌ´Ù.
-				±×¸®°í °¢°¢ÀÇ ÁÙÀº ºí·ÏÀÌ ±× 0°ªÀÎ °÷¿¡¼­¸¸ ¿òÁ÷ÀÏ¼ö ÀÖµµ·Ï °æ°è ÁÙ ¿ªÇÒÀ» ÇÑ´Ù.
+				ìœ„ì˜ ifë¬¸ì— í•´ë‹¹í•˜ì§€ ì•Šìœ¼ë©´ ëª¨ë‘ 0 ê°’ì„ ë„£ëŠ”ë‹¤. 0 ê°’ì´ ë“¤ì–´ê°„ ê³³ì€ ë¸”ë¡ì´ ì›€ì§ì¼ ê³µê°„ì´ë‹¤.
+				ê·¸ë¦¬ê³  ê°ê°ì˜ ì¤„ì€ ë¸”ë¡ì´ ê·¸ 0ê°’ì¸ ê³³ì—ì„œë§Œ ì›€ì§ì¼ìˆ˜ ìžˆë„ë¡ ê²½ê³„ ì¤„ ì—­í• ì„ í•œë‹¤.
 			*/
 			else
 				BackGround[row][col] = 0;
 		}
 }
 
-// ¾Æ·¡ÀÇ ÇÔ¼ö´Â ¹è°æ ºí·ÏÀÇ ¸ð¾çÀ» ±×¸°´Ù. 
+// ì•„ëž˜ì˜ í•¨ìˆ˜ëŠ” ë°°ê²½ ë¸”ë¡ì˜ ëª¨ì–‘ì„ ê·¸ë¦°ë‹¤. 
 void DrawBackGround()
 {
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¼±¾ð ¹× 
-	// À©µµ¿ì Å¬¶óÀÌ¾ðÆ® ¿µ¿ªÀÇ µð½ºÇÃ·¹ÀÌ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®(DC) ÇÚµéÀ» ±¸ÇØ¼­ ¹ÝÈ¯ÇØ¼­ ´ëÀÔ..
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ì„ ì–¸ ë° 
+	// ìœˆë„ìš° í´ë¼ì´ì–¸íŠ¸ ì˜ì—­ì˜ ë””ìŠ¤í”Œë ˆì´ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸(DC) í•¸ë“¤ì„ êµ¬í•´ì„œ ë°˜í™˜í•´ì„œ ëŒ€ìž…..
 	HDC hDC = GetDC(g_hWnd);
-	// ÆæÀº »ç°¢ÇüÀ» ±×¸±¶§ »ç¿ëµÈ´Ù.
+	// íŽœì€ ì‚¬ê°í˜•ì„ ê·¸ë¦´ë•Œ ì‚¬ìš©ëœë‹¤.
 	HPEN hPen, hOldPen;
-	// ºê·¯½¬´Â »ç°¢ÇüÀ» Ã¤¿ï¶§ »ç¿ëµÈ´Ù.
+	// ë¸ŒëŸ¬ì‰¬ëŠ” ì‚¬ê°í˜•ì„ ì±„ìš¸ë•Œ ì‚¬ìš©ëœë‹¤.
 	HBRUSH hBrush, hOldBrush;
 	int x, y;
 
-	// ±Ý»ö Ææ
+	// ê¸ˆìƒ‰ íŽœ
 	hPen = CreatePen(PS_SOLID, 1, RGB(255, 215, 0));
-	// º¸¶ó»ö ºê·¯½¬
+	// ë³´ë¼ìƒ‰ ë¸ŒëŸ¬ì‰¬
 	hBrush = CreateSolidBrush(RGB(148, 0, 211));
 
 	/*
-		SelectObject ÇÔ¼ö·Î ±³Ã¼ °¡´ÉÇÑ GDI Object´Â Bitmap, Pen,
-		Brush, Font, Region ÀÌ´Ù. ±×·±µ¥ BitmapÀÇ °æ¿ì¿¡´Â 
-		DC°¡ ¸Þ¸ð¸®(Memory) DCÀÇ °æ¿ì¿¡´Â Bitmap °´Ã¼°¡ Ãâ·ÂÀåÄ¡¿Í
-		Á÷Á¢ °ü·ÃÀÌ µÇ¾î ÀÖ¾î¼­ Bitmap °´Ã¼¸¦ ±³Ã¼ÇÒ ¼ö ¾ø½À´Ï´Ù.
-		±×¸®°í ÀÌ ÇÔ¼ö´Â GDI Object ±³Ã¼ ÀÛ¾÷ÀÌ ¼º°øµÇ¸é DC°¡ ÀÌÀü¿¡
-		»ç¿ëÇÏ°í ÀÖ´ø GDI ObjectÀÇ ÇÚµé °ªÀ» ¹ÝÈ¯ÇÏ°í ½ÇÆÐÇÏ¸é NULL
-		°ªÀ» ¹ÝÈ¯ÇÕ´Ï´Ù.
-		¿¹¸¦ µé¾î, SelectObject ÇÔ¼ö¸¦ »ç¿ëÇØ¼­ Brush Object¸¦ ±³Ã¼ÇÏ´Â
-		°æ¿ì, »õ·Î ¸¸µç Brush °´Ã¼ÀÇ ÇÚµé °ªÀÌ 0x10000012ÀÌ°í ±âÁ¸¿¡ DC¿¡
-		ÀúÀåµÇ¾î ÀÖ´ø Brush °´Ã¼ÀÇ ÇÚµé °ªÀÌ 0x30000412ÀÎ °æ¿ì¿¡ SelectObject
-		ÇÔ¼ö¸¦ »ç¿ëÇÏ°í ³ª¸é DCÀÇ Brush Object ÇÚµé °ªÀº 0x10000012À¸·Î º¯°æ
-		µÈ´Ù´Â ¶æÀÔ´Ï´Ù. ±×¸®°í 0x30000412 °ªÀº SelectObject ÇÔ¼öÀÇ ¹ÝÈ¯ °ªÀÌ µÊ!!!!~~~~
-		±×·±µ¥ SelectObject ÇÔ¼ö¸¦ º¸¸é 'µÎ ¹øÂ° ¸Å°³ º¯¼ö'¿Í '¹ÝÈ¯' ÀÚ·áÇüÀÌ HGDIOBJÀÌ´Ù.
-		½ÇÁ¦·Î »ç¿ë µÇ´Â ÀÚ·áÇüÀº HBITMAP, HPEN, HBRUSH ±×¸®°í HFONTÀÎµ¥ ¸»ÀÌ´Ù. ÀÌ°ÍÀº
-		°¢ GDI Object º°·Î ±³Ã¼ ÇÔ¼ö¸¦ ¸¸µé¸é ÇÔ¼öµµ ¸¹¾ÆÁö°í GDI Object °¡ »õ·Ó°Ô Ãß°¡µÇ´Â 
-		°æ¿ì »õ·Î¿î ÇÔ¼ö¸¦ ¸¸µé¾î¾ß ÇÏ´Â ºÒÆíÇÔµµ »ý±â±â ¶§¹®¿¡ ÀÌ·± ÇÚµé ÀÚ·áÇüÀ» ÅëÀÏÇÒ ¼ö ÀÖ´Â
-		HGDIOBJ¸¦ Ãß°¡·Î ¸¸µé¾î¼­ »ç¿ëÇÏ´Â °ÍÀÔ´Ï´Ù. °á±¹ HGDIOBJ ÀÚ·áÇüÀÌ HBITMAP, HPEN, HBRUSH
-		±×¸®°í HFONTÀÇ »óÀ§ ÀÚ·áÇüÃ³·³ Ã³¸®µÇ´Â °ÍÀÔ´Ï´Ù.(»ó¼Ó)
-		±×·¡¼­ SelectObjectÇÔ¼öÀÇ µÎ ¹øÂ° ¸Å°³ º¯¼ö°¡ HGDIOBJÀÓ¿¡µµ ÀÎÀÚ Àü´Þ½Ã Æ¯º°ÇÑ Çü º¯È¯(type casting)
-		¾øÀÌµµ ±×´ë·Î »ç¿ëÇÒ ¼ö ÀÖ´Â °ÍÀÔ´Ï´Ù.
+		SelectObject í•¨ìˆ˜ë¡œ êµì²´ ê°€ëŠ¥í•œ GDI ObjectëŠ” Bitmap, Pen,
+		Brush, Font, Region ì´ë‹¤. ê·¸ëŸ°ë° Bitmapì˜ ê²½ìš°ì—ëŠ” 
+		DCê°€ ë©”ëª¨ë¦¬(Memory) DCì˜ ê²½ìš°ì—ëŠ” Bitmap ê°ì²´ê°€ ì¶œë ¥ìž¥ì¹˜ì™€
+		ì§ì ‘ ê´€ë ¨ì´ ë˜ì–´ ìžˆì–´ì„œ Bitmap ê°ì²´ë¥¼ êµì²´í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
+		ê·¸ë¦¬ê³  ì´ í•¨ìˆ˜ëŠ” GDI Object êµì²´ ìž‘ì—…ì´ ì„±ê³µë˜ë©´ DCê°€ ì´ì „ì—
+		ì‚¬ìš©í•˜ê³  ìžˆë˜ GDI Objectì˜ í•¸ë“¤ ê°’ì„ ë°˜í™˜í•˜ê³  ì‹¤íŒ¨í•˜ë©´ NULL
+		ê°’ì„ ë°˜í™˜í•©ë‹ˆë‹¤.
+		ì˜ˆë¥¼ ë“¤ì–´, SelectObject í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•´ì„œ Brush Objectë¥¼ êµì²´í•˜ëŠ”
+		ê²½ìš°, ìƒˆë¡œ ë§Œë“  Brush ê°ì²´ì˜ í•¸ë“¤ ê°’ì´ 0x10000012ì´ê³  ê¸°ì¡´ì— DCì—
+		ì €ìž¥ë˜ì–´ ìžˆë˜ Brush ê°ì²´ì˜ í•¸ë“¤ ê°’ì´ 0x30000412ì¸ ê²½ìš°ì— SelectObject
+		í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ê³  ë‚˜ë©´ DCì˜ Brush Object í•¸ë“¤ ê°’ì€ 0x10000012ìœ¼ë¡œ ë³€ê²½
+		ëœë‹¤ëŠ” ëœ»ìž…ë‹ˆë‹¤. ê·¸ë¦¬ê³  0x30000412 ê°’ì€ SelectObject í•¨ìˆ˜ì˜ ë°˜í™˜ ê°’ì´ ë¨!!!!~~~~
+		ê·¸ëŸ°ë° SelectObject í•¨ìˆ˜ë¥¼ ë³´ë©´ 'ë‘ ë²ˆì§¸ ë§¤ê°œ ë³€ìˆ˜'ì™€ 'ë°˜í™˜' ìžë£Œí˜•ì´ HGDIOBJì´ë‹¤.
+		ì‹¤ì œë¡œ ì‚¬ìš© ë˜ëŠ” ìžë£Œí˜•ì€ HBITMAP, HPEN, HBRUSH ê·¸ë¦¬ê³  HFONTì¸ë° ë§ì´ë‹¤. ì´ê²ƒì€
+		ê° GDI Object ë³„ë¡œ êµì²´ í•¨ìˆ˜ë¥¼ ë§Œë“¤ë©´ í•¨ìˆ˜ë„ ë§Žì•„ì§€ê³  GDI Object ê°€ ìƒˆë¡­ê²Œ ì¶”ê°€ë˜ëŠ” 
+		ê²½ìš° ìƒˆë¡œìš´ í•¨ìˆ˜ë¥¼ ë§Œë“¤ì–´ì•¼ í•˜ëŠ” ë¶ˆíŽ¸í•¨ë„ ìƒê¸°ê¸° ë•Œë¬¸ì— ì´ëŸ° í•¸ë“¤ ìžë£Œí˜•ì„ í†µì¼í•  ìˆ˜ ìžˆëŠ”
+		HGDIOBJë¥¼ ì¶”ê°€ë¡œ ë§Œë“¤ì–´ì„œ ì‚¬ìš©í•˜ëŠ” ê²ƒìž…ë‹ˆë‹¤. ê²°êµ­ HGDIOBJ ìžë£Œí˜•ì´ HBITMAP, HPEN, HBRUSH
+		ê·¸ë¦¬ê³  HFONTì˜ ìƒìœ„ ìžë£Œí˜•ì²˜ëŸ¼ ì²˜ë¦¬ë˜ëŠ” ê²ƒìž…ë‹ˆë‹¤.(ìƒì†)
+		ê·¸ëž˜ì„œ SelectObjectí•¨ìˆ˜ì˜ ë‘ ë²ˆì§¸ ë§¤ê°œ ë³€ìˆ˜ê°€ HGDIOBJìž„ì—ë„ ì¸ìž ì „ë‹¬ì‹œ íŠ¹ë³„í•œ í˜• ë³€í™˜(type casting)
+		ì—†ì´ë„ ê·¸ëŒ€ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ê²ƒìž…ë‹ˆë‹¤.
 		
 		ex)
-			// ÆÄ¶õ»ö Brush °´Ã¼ »ý¼º
+			// íŒŒëž€ìƒ‰ Brush ê°ì²´ ìƒì„±
 			HBRUSH h_brush = CreateSolidBrush(RGB(0, 0, 255));
-			// HBRUSH Çü½ÄÀ» HGDIOBJ¿¡ ´ëÀÔ °¡´É
+			// HBRUSH í˜•ì‹ì„ HGDIOBJì— ëŒ€ìž… ê°€ëŠ¥
 			HGDIOBJ h_gdiobj = h_brush;
 
-			ÇÏÁö¸¸ ¾Æ·¡¿Í °°ÀÌ HGDIOBJ °ªÀ» HBITMAP, HPEN, HBRUSH ¶Ç´Â HFONT¿¡ ´ëÀÔÇÏ´Â °æ¿ì Çü º¯È¯À»
-			»ç¿ëÇÏÁö ¾ÊÀ¸¸é ¿À·ù°¡ ¹ß»ýÇÑ´Ù.
-			// ÆÄ¶õ»ö Brush °´Ã¼ »ý¼º
+			í•˜ì§€ë§Œ ì•„ëž˜ì™€ ê°™ì´ HGDIOBJ ê°’ì„ HBITMAP, HPEN, HBRUSH ë˜ëŠ” HFONTì— ëŒ€ìž…í•˜ëŠ” ê²½ìš° í˜• ë³€í™˜ì„
+			ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë©´ ì˜¤ë¥˜ê°€ ë°œìƒí•œë‹¤.
+			// íŒŒëž€ìƒ‰ Brush ê°ì²´ ìƒì„±
 			HBRUSH h_brush = CreateSolidBrush(RGB(0, 0, 255));
-			// HBRUSH Çü½ÄÀ» HGDIOBJ¿¡ ´ëÀÔ °¡´É
+			// HBRUSH í˜•ì‹ì„ HGDIOBJì— ëŒ€ìž… ê°€ëŠ¥
 			HGDIOBJ h_gdiobj = h_brush;
-			// ¿À·ù ¹ß»ý
+			// ì˜¤ë¥˜ ë°œìƒ
 			HBRUSH check = h_gdiobj;
-			errir C2440: 'ÃÊ±âÈ­ Áß': 'HGDIOBJ'¿¡¼­ 'HBRUSH'(À¸)·Î º¯È¯ÇÒ ¼ö ¾ø´Ù.
+			errir C2440: 'ì´ˆê¸°í™” ì¤‘': 'HGDIOBJ'ì—ì„œ 'HBRUSH'(ìœ¼)ë¡œ ë³€í™˜í•  ìˆ˜ ì—†ë‹¤.
 
-			ÀÌ ¹®Á¦¸¦ ÇØ°áÇÏ·Á¸é ¾Æ·¡¿Í °°ÀÌ Á¤È®ÇÑ ÇÚµé ÀÚ·áÇüÀ¸·Î Çü º¯È¯À» ÇØ¾ß ÇÑ´Ù.
+			ì´ ë¬¸ì œë¥¼ í•´ê²°í•˜ë ¤ë©´ ì•„ëž˜ì™€ ê°™ì´ ì •í™•í•œ í•¸ë“¤ ìžë£Œí˜•ìœ¼ë¡œ í˜• ë³€í™˜ì„ í•´ì•¼ í•œë‹¤.
 
-			// ÆÄ¶õ»ö Brush °´Ã¼ »ý¼º
+			// íŒŒëž€ìƒ‰ Brush ê°ì²´ ìƒì„±
 			HBRUSH h_brush = CreateSolidBrush(RGB(0, 0, 255));
-			// HBRUSH Çü½ÄÀ» HGDIOBJ¿¡ ´ëÀÔ °¡´É
+			// HBRUSH í˜•ì‹ì„ HGDIOBJì— ëŒ€ìž… ê°€ëŠ¥
 			HGDIOBJ h_gdiobj = h_brush;
-			// Çüº¯È¯À» »ç¿ëÇÏ¸é ¿À·ù ÇØ°á~!
+			// í˜•ë³€í™˜ì„ ì‚¬ìš©í•˜ë©´ ì˜¤ë¥˜ í•´ê²°~!
 			HBRUSH check = (HBRUSH)h_gdiobj;
 
-			(¸¸¾à) SelectObject ÇÔ¼öÀÇ ¹ÝÈ¯ °ªÀ» HGDIOBJ ÀÚ·áÇüÀ¸·Î ¹Þ¾Ò´Âµ¥ SelectObject
-			ÇÔ¼ö¿¡ ÀÇÇØ¼­ ¹ÝÈ¯µÇ´Â °ªÀÌ Brush °´Ã¼ÀÇ ÇÚµé °ªÀÌ ºÐ¸íÇÒ °æ¿ì... ¶§¹®¿¡ HBRUSH 
-			º¯¼ö·Î ÀúÀåÇÏ°í ½Í¾î¼­ ¾Æ·¡¿Í °°ÀÌ »ç¿ëÇÏ¸é C2440 ¿À·ù°¡ ¹ß»ý~.
+			(ë§Œì•½) SelectObject í•¨ìˆ˜ì˜ ë°˜í™˜ ê°’ì„ HGDIOBJ ìžë£Œí˜•ìœ¼ë¡œ ë°›ì•˜ëŠ”ë° SelectObject
+			í•¨ìˆ˜ì— ì˜í•´ì„œ ë°˜í™˜ë˜ëŠ” ê°’ì´ Brush ê°ì²´ì˜ í•¸ë“¤ ê°’ì´ ë¶„ëª…í•  ê²½ìš°... ë•Œë¬¸ì— HBRUSH 
+			ë³€ìˆ˜ë¡œ ì €ìž¥í•˜ê³  ì‹¶ì–´ì„œ ì•„ëž˜ì™€ ê°™ì´ ì‚¬ìš©í•˜ë©´ C2440 ì˜¤ë¥˜ê°€ ë°œìƒ~.
 
 			HDC h_dc = ::GetDC(m_hWnd);
 			HBURSH h_brush = CreateSolidBrush(RGB(0, 0, 255));
-			// ¿À·ù!
+			// ì˜¤ë¥˜!
 			HBRUSH h_old_brush = selectObject(h_dc, h_brush);
 
-			ÀÌ ¹®Á¦µµ ¾Æ·¡¿Í °°ÀÌ Çü º¯È¯À» »ç¿ëÇØ¼­ ÇØ°áÇÏ¸é µÊ.
+			ì´ ë¬¸ì œë„ ì•„ëž˜ì™€ ê°™ì´ í˜• ë³€í™˜ì„ ì‚¬ìš©í•´ì„œ í•´ê²°í•˜ë©´ ë¨.
 			HDC h_dc = ::GetDC(m_hWnd);
 			HBURSH h_brush = CreateSolidBrush(RGB(0, 0, 255));
-			// Á¤»ó µ¿ÀÛ!
+			// ì •ìƒ ë™ìž‘!
 			HBRUSH h_old_brush = (HBRUSH)selectObject(h_dc, h_brush);
 		   
 	*/
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ Ææ ÇÚµéÀ» ´ëÀÔ.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— íŽœ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldPen = (HPEN)SelectObject(hDC, hPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ ºê·¯½¬ ÇÚµéÀ» ´ëÀÔ.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— ë¸ŒëŸ¬ì‰¬ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldBrush = (HBRUSH)SelectObject(hDC, hBrush);
 
-	// ¾Æ·¡ µÎ ¹Ýº¹¹®Àº ¹è°æ ºí·ÏÀÇ °ªÀ» °Ë»çÇÑ´Ù.
-	for(int row = 0; row < 21; row++) // Çà
-		for (int col = 0; col < 12; col++) // ¿­	
-			// ¸¸¾à ¹è¿­ÀÇ °ªÀÌ 1ÀÌ¸é...
+	// ì•„ëž˜ ë‘ ë°˜ë³µë¬¸ì€ ë°°ê²½ ë¸”ë¡ì˜ ê°’ì„ ê²€ì‚¬í•œë‹¤.
+	for(int row = 0; row < 21; row++) // í–‰
+		for (int col = 0; col < 12; col++) // ì—´	
+			// ë§Œì•½ ë°°ì—´ì˜ ê°’ì´ 1ì´ë©´...
 			if (BackGround[row][col] == 1)
 			{
-				// ¹è°æ ºí·ÏÀÇ À§Ä¡¸¦ ¼ÂÆÃ (»ç°¢ºí·Ï ÇÏ³ªÀÇ Å©±â°¡ 10ÀÌ´Ï *10 ÇØÁØ´Ù)
-				x = 160 + col * 20;		// ¹è°æÀ» x ÃàÀ¸·Î 160 ¸¸Å­ ¶ç¿ö¼­ »ý¼ºÇÑ´Ù.
+				// ë°°ê²½ ë¸”ë¡ì˜ ìœ„ì¹˜ë¥¼ ì…‹íŒ… (ì‚¬ê°ë¸”ë¡ í•˜ë‚˜ì˜ í¬ê¸°ê°€ 10ì´ë‹ˆ *10 í•´ì¤€ë‹¤)
+				x = 160 + col * 20;		// ë°°ê²½ì„ x ì¶•ìœ¼ë¡œ 160 ë§Œí¼ ë„ì›Œì„œ ìƒì„±í•œë‹¤.
 				y = row * 20;
-				// ÇØ´ç À§Ä¡¿¡ ÇØ´ç Å©±â·Î(20) »ç°¢ÇüÀ» Ãâ·ÂÇÑ´Ù.
+				// í•´ë‹¹ ìœ„ì¹˜ì— í•´ë‹¹ í¬ê¸°ë¡œ(20) ì‚¬ê°í˜•ì„ ì¶œë ¥í•œë‹¤.
 				Rectangle(hDC, x, y, x + 20, y + 20);
 			}
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldBrush);
 
-	// Ææ, ºê·¯½¬ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	// íŽœ, ë¸ŒëŸ¬ì‰¬ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteObject(hPen);
 	DeleteObject(hBrush);
 
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¹Ý³³ÇÑ´Ù. Release¸¦ ÇØ¹ö¸®¸é ±× ´ÙÀ½ Ææ µ¿ÀÛ ¾ÈÇÔ
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ë°˜ë‚©í•œë‹¤. Releaseë¥¼ í•´ë²„ë¦¬ë©´ ê·¸ ë‹¤ìŒ íŽœ ë™ìž‘ ì•ˆí•¨
 	//ReleaseDC(g_hWnd, hDC);
 
-	// ÃÊ·Ï»ö Ææ
+	// ì´ˆë¡ìƒ‰ íŽœ
 	hPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
-	// °ËÀº»ö ºê·¯½¬
+	// ê²€ì€ìƒ‰ ë¸ŒëŸ¬ì‰¬
 	hBrush = CreateSolidBrush(RGB(0, 0, 0));
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ Ææ ÇÚµéÀ» ´ëÀÔ.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— íŽœ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldPen = (HPEN)SelectObject(hDC, hPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ ºê·¯½¬ ÇÚµéÀ» ´ëÀÔ.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— ë¸ŒëŸ¬ì‰¬ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldBrush = (HBRUSH)SelectObject(hDC, hBrush);
 
-	// ÇØ´ç À§Ä¡¿¡ ÇØ´ç Å©±â·Î »ç°¢ÇüÀ» Ãâ·ÂÇÑ´Ù. - HoldBlock
+	// í•´ë‹¹ ìœ„ì¹˜ì— í•´ë‹¹ í¬ê¸°ë¡œ ì‚¬ê°í˜•ì„ ì¶œë ¥í•œë‹¤. - HoldBlock
 	Rectangle(hDC, 440, 240, 580, 370);
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldBrush);
 
-	// Ææ, ºê·¯½¬ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	// íŽœ, ë¸ŒëŸ¬ì‰¬ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteObject(hPen);
 	DeleteObject(hBrush);
 
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¹Ý³³ÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ë°˜ë‚©í•œë‹¤.
 	ReleaseDC(g_hWnd, hDC);
 
 }
 
-// ¾Æ·¡ÀÇ ÇÔ¼ö´Â »ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö·Î¼­ ºí·ÏÀÇ ¸ð¾çÀ» ±×¸°´Ù. 
+// ì•„ëž˜ì˜ í•¨ìˆ˜ëŠ” ì‚¬ìš©ìž ì •ì˜ í•¨ìˆ˜ë¡œì„œ ë¸”ë¡ì˜ ëª¨ì–‘ì„ ê·¸ë¦°ë‹¤. 
 void DrawBlock()
 {
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¼±¾ð ¹× 
-	// À©µµ¿ì Å¬¶óÀÌ¾ðÆ® ¿µ¿ªÀÇ µð½ºÇÃ·¹ÀÌ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®(DC) ÇÚµéÀ» ±¸ÇØ¼­ ¹ÝÈ¯ÇØ¼­ ´ëÀÔ..
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ì„ ì–¸ ë° 
+	// ìœˆë„ìš° í´ë¼ì´ì–¸íŠ¸ ì˜ì—­ì˜ ë””ìŠ¤í”Œë ˆì´ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸(DC) í•¸ë“¤ì„ êµ¬í•´ì„œ ë°˜í™˜í•´ì„œ ëŒ€ìž…..
 	HDC hDC = GetDC(g_hWnd);
-	// ÆæÀº »ç°¢ÇüÀ» ±×¸±¶§ »ç¿ëµÈ´Ù.
+	// íŽœì€ ì‚¬ê°í˜•ì„ ê·¸ë¦´ë•Œ ì‚¬ìš©ëœë‹¤.
 	HPEN hPen, hOldPen;
-	// ºê·¯½¬´Â »ç°¢ÇüÀ» Ã¤¿ï¶§ »ç¿ëµÈ´Ù.
+	// ë¸ŒëŸ¬ì‰¬ëŠ” ì‚¬ê°í˜•ì„ ì±„ìš¸ë•Œ ì‚¬ìš©ëœë‹¤.
 	HBRUSH hBrush, hOldBrush;
 	int x, y;
 
-	// ÆÄ¶õ»ö Ææ
+	// íŒŒëž€ìƒ‰ íŽœ
 	hPen = CreatePen(PS_SOLID, 1, RGB(65, 105, 255));
-	// ÁÖÈ²»ö ºê·¯½¬
+	// ì£¼í™©ìƒ‰ ë¸ŒëŸ¬ì‰¬
 	hBrush = CreateSolidBrush(RGB(255, 165, 0));
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ Ææ ÇÚµéÀ» ´ëÀÔ.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— íŽœ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldPen = (HPEN)SelectObject(hDC, hPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ ºê·¯½¬ ÇÚµéÀ» ´ëÀÔ.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— ë¸ŒëŸ¬ì‰¬ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldBrush = (HBRUSH)SelectObject(hDC, hBrush);
 
-	// ¾Æ·¡ µÎ ¹Ýº¹¹®Àº ºí·ÏÀÇ °ªÀ» °Ë»çÇÑ´Ù.
-	for(int row = 0; row < 4; row++) // Çà
-		for(int col = 0; col < 4; col++) // ¿­
-			// ¸¸¾à ¹è¿­ÀÇ °ªÀÌ 1ÀÌ¸é...
-			if (Block[BlockNum][RotateNum][row][col] == 1) // BlockNum´Â ºí·ÏÀÇ Á¾·ù, RotateNum´Â ºí·ÏÀÇ È¸Àü Á¾·ù
+	// ì•„ëž˜ ë‘ ë°˜ë³µë¬¸ì€ ë¸”ë¡ì˜ ê°’ì„ ê²€ì‚¬í•œë‹¤.
+	for(int row = 0; row < 4; row++) // í–‰
+		for(int col = 0; col < 4; col++) // ì—´
+			// ë§Œì•½ ë°°ì—´ì˜ ê°’ì´ 1ì´ë©´...
+			if (Block[BlockNum][RotateNum][row][col] == 1) // BlockNumëŠ” ë¸”ë¡ì˜ ì¢…ë¥˜, RotateNumëŠ” ë¸”ë¡ì˜ íšŒì „ ì¢…ë¥˜
 			{
-				// ºí·ÏÀÇ À§Ä¡¸¦ ¼ÂÆÃ (»ç°¢ºí·Ï ÇÏ³ªÀÇ Å©±â°¡ 20ÀÌ´Ï *20 ÇØÁØ´Ù)
-				x = 180 + NowX * 20 + col * 20; // 180(±âº») + NowX * 20 À¸·Î Ãâ·ÂÇÏ´Â ºí·ÏÀÇ ³ÐÀÌ¸¦ ¼³Á¤ÇÏ¿© ¾È °ãÄ¡°ÔÇÔ~.
-				y = NowY * 20 + row * 20;       // NowY * 20 À¸·Î Ãâ·ÂÇÏ´Â ºí·ÏÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÏ¿© ¾È °ãÄ¡°ÔÇÔ~.
-				// ÇØ´ç À§Ä¡¿¡ ÇØ´ç Å©±â·Î(20) »ç°¢ÇüÀ» Ãâ·ÂÇÑ´Ù.
+				// ë¸”ë¡ì˜ ìœ„ì¹˜ë¥¼ ì…‹íŒ… (ì‚¬ê°ë¸”ë¡ í•˜ë‚˜ì˜ í¬ê¸°ê°€ 20ì´ë‹ˆ *20 í•´ì¤€ë‹¤)
+				x = 180 + NowX * 20 + col * 20; // 180(ê¸°ë³¸) + NowX * 20 ìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” ë¸”ë¡ì˜ ë„“ì´ë¥¼ ì„¤ì •í•˜ì—¬ ì•ˆ ê²¹ì¹˜ê²Œí•¨~.
+				y = NowY * 20 + row * 20;       // NowY * 20 ìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” ë¸”ë¡ì˜ ë†’ì´ë¥¼ ì„¤ì •í•˜ì—¬ ì•ˆ ê²¹ì¹˜ê²Œí•¨~.
+				// í•´ë‹¹ ìœ„ì¹˜ì— í•´ë‹¹ í¬ê¸°ë¡œ(20) ì‚¬ê°í˜•ì„ ì¶œë ¥í•œë‹¤.
 				Rectangle(hDC, x, y, x + 20, y + 20);
 			}
 
 /*
-	Áï °£´ÜÇÏ°Ô »ý°¢ÇÏ¸é µÈ´Ù. ºí·ÏÀÇ ¸ð¾çÀ» ¸¸µé±â À§ÇØ¼­ ¹è¿­ÀÇ °ªÀÌ 0ÀÌ¸é
-	¾Æ¹« °Íµµ Ãâ·ÂÇÏÁö ¾Ê°í 1ÀÌ¸é »ç°¢ÇüÀ» Ãâ·ÂÇÏ¿© Ãâ·Â°á°ú °°Àº ºí·ÏÀ» ¸¸µå´Â °ÍÀÌ´Ù.
+	ì¦‰ ê°„ë‹¨í•˜ê²Œ ìƒê°í•˜ë©´ ëœë‹¤. ë¸”ë¡ì˜ ëª¨ì–‘ì„ ë§Œë“¤ê¸° ìœ„í•´ì„œ ë°°ì—´ì˜ ê°’ì´ 0ì´ë©´
+	ì•„ë¬´ ê²ƒë„ ì¶œë ¥í•˜ì§€ ì•Šê³  1ì´ë©´ ì‚¬ê°í˜•ì„ ì¶œë ¥í•˜ì—¬ ì¶œë ¥ê²°ê³¼ ê°™ì€ ë¸”ë¡ì„ ë§Œë“œëŠ” ê²ƒì´ë‹¤.
 */
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldBrush);
 
-	// Ææ, ºê·¯½¬ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	// íŽœ, ë¸ŒëŸ¬ì‰¬ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteObject(hPen);
 	DeleteObject(hBrush);
 
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¹Ý³³ÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ë°˜ë‚©í•œë‹¤.
 	ReleaseDC(g_hWnd, hDC);
 
 }
 
-// ºí·ÏÀ» Áö¿ò
+// ë¸”ë¡ì„ ì§€ì›€
 void EraseBlock()
 {
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¼±¾ð ¹× 
-	// À©µµ¿ì Å¬¶óÀÌ¾ðÆ® ¿µ¿ªÀÇ µð½ºÇÃ·¹ÀÌ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®(DC) ÇÚµéÀ» ±¸ÇØ¼­ ¹ÝÈ¯ÇØ¼­ ´ëÀÔ..
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ì„ ì–¸ ë° 
+	// ìœˆë„ìš° í´ë¼ì´ì–¸íŠ¸ ì˜ì—­ì˜ ë””ìŠ¤í”Œë ˆì´ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸(DC) í•¸ë“¤ì„ êµ¬í•´ì„œ ë°˜í™˜í•´ì„œ ëŒ€ìž…..
 	HDC hDC = GetDC(g_hWnd);
-	// ÆæÀº »ç°¢ÇüÀ» ±×¸±¶§ »ç¿ëµÈ´Ù.
+	// íŽœì€ ì‚¬ê°í˜•ì„ ê·¸ë¦´ë•Œ ì‚¬ìš©ëœë‹¤.
 	HPEN hPen, hOldPen;
-	// ºê·¯½¬´Â »ç°¢ÇüÀ» Ã¤¿ï¶§ »ç¿ëµÈ´Ù.
+	// ë¸ŒëŸ¬ì‰¬ëŠ” ì‚¬ê°í˜•ì„ ì±„ìš¸ë•Œ ì‚¬ìš©ëœë‹¤.
 	HBRUSH hBrush, hOldBrush;
 	int x, y;
 
-	// °ËÁ¤»ö Ææ (¹è°æ »ö»óÀ¸·Î Áö¿ò)
+	// ê²€ì •ìƒ‰ íŽœ (ë°°ê²½ ìƒ‰ìƒìœ¼ë¡œ ì§€ì›€)
 	hPen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
-	// °ËÁ¤»ö ºê·¯½¬ (¹è°æ »ö»óÀ¸·Î Áö¿ò)
+	// ê²€ì •ìƒ‰ ë¸ŒëŸ¬ì‰¬ (ë°°ê²½ ìƒ‰ìƒìœ¼ë¡œ ì§€ì›€)
 	hBrush = CreateSolidBrush(RGB(0, 0, 0));
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ Ææ ÇÚµéÀ» ´ëÀÔ.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— íŽœ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldPen = (HPEN)SelectObject(hDC, hPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ ºê·¯½¬ ÇÚµéÀ» ´ëÀÔ.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— ë¸ŒëŸ¬ì‰¬ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldBrush = (HBRUSH)SelectObject(hDC, hBrush);
 
-	// ¾Æ·¡ µÎ ¹Ýº¹¹®Àº ºí·ÏÀÇ °ªÀ» °Ë»çÇÑ´Ù.
-	for(int row = 0; row < 4; row++) // Çà
-		for(int col = 0; col < 4; col++) // ¿­
-			// ¸¸¾à ¹è¿­ÀÇ °ªÀÌ 1ÀÌ¸é...
-			if (Block[BlockNum][RotateNum][row][col]) // BlockNum´Â ºí·ÏÀÇ Á¾·ù, RotateNum´Â ºí·ÏÀÇ È¸Àü Á¾·ù (==1 ¾ø¾îµµ °°Àº ÀÇ¹ÌÀÌ´Ù. Áï true´Â 1)
+	// ì•„ëž˜ ë‘ ë°˜ë³µë¬¸ì€ ë¸”ë¡ì˜ ê°’ì„ ê²€ì‚¬í•œë‹¤.
+	for(int row = 0; row < 4; row++) // í–‰
+		for(int col = 0; col < 4; col++) // ì—´
+			// ë§Œì•½ ë°°ì—´ì˜ ê°’ì´ 1ì´ë©´...
+			if (Block[BlockNum][RotateNum][row][col]) // BlockNumëŠ” ë¸”ë¡ì˜ ì¢…ë¥˜, RotateNumëŠ” ë¸”ë¡ì˜ íšŒì „ ì¢…ë¥˜ (==1 ì—†ì–´ë„ ê°™ì€ ì˜ë¯¸ì´ë‹¤. ì¦‰ trueëŠ” 1)
 			{
-				// ºí·ÏÀÇ À§Ä¡¸¦ ¼ÂÆÃ (»ç°¢ºí·Ï ÇÏ³ªÀÇ Å©±â°¡ 20ÀÌ´Ï *20 ÇØÁØ´Ù)
-				x = 180 + NowX * 20 + col * 20; // 180(±âº») + NowX * 20 À¸·Î Ãâ·ÂÇÏ´Â ºí·ÏÀÇ ³ÐÀÌ¸¦ ¼³Á¤ÇÏ¿© ¾È °ãÄ¡°ÔÇÔ~.
-				y = NowY * 20 + row * 20;       // NowY * 20 À¸·Î Ãâ·ÂÇÏ´Â ºí·ÏÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÏ¿© ¾È °ãÄ¡°ÔÇÔ~.
-				// ÇØ´ç À§Ä¡¿¡ ÇØ´ç Å©±â·Î(20) »ç°¢ÇüÀ» Ãâ·ÂÇÑ´Ù.
+				// ë¸”ë¡ì˜ ìœ„ì¹˜ë¥¼ ì…‹íŒ… (ì‚¬ê°ë¸”ë¡ í•˜ë‚˜ì˜ í¬ê¸°ê°€ 20ì´ë‹ˆ *20 í•´ì¤€ë‹¤)
+				x = 180 + NowX * 20 + col * 20; // 180(ê¸°ë³¸) + NowX * 20 ìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” ë¸”ë¡ì˜ ë„“ì´ë¥¼ ì„¤ì •í•˜ì—¬ ì•ˆ ê²¹ì¹˜ê²Œí•¨~.
+				y = NowY * 20 + row * 20;       // NowY * 20 ìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” ë¸”ë¡ì˜ ë†’ì´ë¥¼ ì„¤ì •í•˜ì—¬ ì•ˆ ê²¹ì¹˜ê²Œí•¨~.
+				// í•´ë‹¹ ìœ„ì¹˜ì— í•´ë‹¹ í¬ê¸°ë¡œ(20) ì‚¬ê°í˜•ì„ ì¶œë ¥í•œë‹¤.
 				Rectangle(hDC, x, y, x + 20, y + 20);
 			}
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldBrush);
 
-	// Ææ, ºê·¯½¬ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	// íŽœ, ë¸ŒëŸ¬ì‰¬ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteObject(hPen);
 	DeleteObject(hBrush);
 
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¹Ý³³ÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ë°˜ë‚©í•œë‹¤.
 	ReleaseDC(g_hWnd, hDC);
 }
 
-// Ghostºí·ÏÀ» ±×¸®´Â ÇÔ¼ö ¢¹
+// Ghostë¸”ë¡ì„ ê·¸ë¦¬ëŠ” í•¨ìˆ˜ â–·
 void DrawGhostBlock(void)
-{   // Ghostºí·ÏÀÇ yÁÂÇ¥¸¦ ÇöÀç yÁÂÇ¥·Î ¼³Á¤ ¢¹ 
+{   // Ghostë¸”ë¡ì˜ yì¢Œí‘œë¥¼ í˜„ìž¬ yì¢Œí‘œë¡œ ì„¤ì • â–· 
 	GhostY = NowY;
-	// Ghostºí·ÏÀÇ ÁÂÇ¥¸¦ È®ÀÎÇØ¼­ ¿òÁ÷ÀÏ ¼ö ÀÖ´ÂÁö °Ë»ç ¢¹
+	// Ghostë¸”ë¡ì˜ ì¢Œí‘œë¥¼ í™•ì¸í•´ì„œ ì›€ì§ì¼ ìˆ˜ ìžˆëŠ”ì§€ ê²€ì‚¬ â–·
 	while (BlockCanMove(NowX, GhostY + 1))
-	{// ¿òÁ÷ÀÏ ¼ö ÀÖÀ¸¸é y++ ¢¹
+	{// ì›€ì§ì¼ ìˆ˜ ìžˆìœ¼ë©´ y++ â–·
 		GhostY++;
 	}
 
@@ -959,13 +959,13 @@ void DrawGhostBlock(void)
 	HPEN hPen, hOldPen;
 	HBRUSH hBrush, hOldBrush;
 
-	// ÁÂÇ¥ ÃÊ±âÈ­ ¢¹
+	// ì¢Œí‘œ ì´ˆê¸°í™” â–·
 	int x = 0;
 	int y = 0;
 
 	int check = 0;
 
-	// Ææ »ý¼º ¢¹ 
+	// íŽœ ìƒì„± â–· 
 	hPen = CreatePen(PS_DASHDOTDOT, 1, RGB(240, 240, 240));
 	hBrush = (HBRUSH)GetStockObject(NULL_BRUSH);
 
@@ -976,12 +976,12 @@ void DrawGhostBlock(void)
 		for (int col = 0; col < 4; col++)
 		{
 			if (Block[BlockNum][RotateNum][row][col])
-			{   // ¿­, Çà ¢¹ 
+			{   // ì—´, í–‰ â–· 
 				int BackGroundX = NowX + col + 1;
 				int BackGroundY = GhostY + row;
-				// ¸¸¾à ÇØ´ç ºí·ÏÀÌ °ø¹éÀÌ¸é  ¢¹
+				// ë§Œì•½ í•´ë‹¹ ë¸”ë¡ì´ ê³µë°±ì´ë©´  â–·
 				if (BackGround[BackGroundY][BackGroundX] == 0)
-				{ // Ã¤¿ìÀÚ ¢¹
+				{ // ì±„ìš°ìž â–·
 					x = 180 + (NowX + col) * 20;
 					y = (GhostY + row) * 20;
 					Rectangle(hDC, x, y, x + 20, y + 20);
@@ -990,7 +990,7 @@ void DrawGhostBlock(void)
 			}
 		}
 
-	// Ææ ÇØÁ¦ ¢¹ 
+	// íŽœ í•´ì œ â–· 
 	SelectObject(hDC, hOldPen);
 	SelectObject(hDC, hOldBrush);
 
@@ -999,7 +999,7 @@ void DrawGhostBlock(void)
 	ReleaseDC(g_hWnd, hDC);
 }
 
-// Ghostºí·Ï Áö¿ì´Â ÇÔ¼ö ¢¹
+// Ghostë¸”ë¡ ì§€ìš°ëŠ” í•¨ìˆ˜ â–·
 void EraseGhostBlock()
 {
 	HDC hDC = GetDC(g_hWnd);
@@ -1007,7 +1007,7 @@ void EraseGhostBlock()
 	HBRUSH hBrush, hOldBrush;
 	int x, y;
 
-	// ÆæÀÌ¶û ¹è°æ»ö °ËÀº»öÀ¸·Î ÇØ¼­ Áö¿ò ¢¹ 
+	// íŽœì´ëž‘ ë°°ê²½ìƒ‰ ê²€ì€ìƒ‰ìœ¼ë¡œ í•´ì„œ ì§€ì›€ â–· 
 	hPen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
 	hBrush = CreateSolidBrush(RGB(0, 0, 0));
 
@@ -1020,7 +1020,7 @@ void EraseGhostBlock()
 			if (Block[BlockNum][RotateNum][row][col])
 			{
 				if (Block[BlockNum][RotateNum][row][col])
-				{   // ÇöÀç ¸»°í ¹Ù·Î Á÷Àü yÁÂÇ¥¸¦ Áö¿ö¾ß ÇÔ ¢¹
+				{   // í˜„ìž¬ ë§ê³  ë°”ë¡œ ì§ì „ yì¢Œí‘œë¥¼ ì§€ì›Œì•¼ í•¨ â–·
 					int BackGroundX = NowX + col + 1;
 					int BackGroundY = PreGhostY + row;
 					if (BackGround[BackGroundY][BackGroundX] == 0)
@@ -1041,108 +1041,108 @@ void EraseGhostBlock()
 	ReleaseDC(g_hWnd, hDC);
 }
 
-// ´ÙÀ½ ºí·ÏÀ» ±×¸°´Ù.
+// ë‹¤ìŒ ë¸”ë¡ì„ ê·¸ë¦°ë‹¤.
 void DrawNextBlock()
 {
-	// ´ÙÀ½ ºí·ÏÀÇ ¹è°æÀ» ±×¸°´Ù.
+	// ë‹¤ìŒ ë¸”ë¡ì˜ ë°°ê²½ì„ ê·¸ë¦°ë‹¤.
 
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ Á¤ÀÇÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ì •ì˜í•œë‹¤.
 	HDC hDC;
-	// ÆæÀº »ç°¢ÇüÀ» ±×¸±¶§ »ç¿ëµÈ´Ù.
+	// íŽœì€ ì‚¬ê°í˜•ì„ ê·¸ë¦´ë•Œ ì‚¬ìš©ëœë‹¤.
 	HPEN hPen, hOldPen;
-	// ºê·¯½¬´Â »ç°¢ÇüÀ» Ã¤¿ï¶§ »ç¿ëµÈ´Ù.
+	// ë¸ŒëŸ¬ì‰¬ëŠ” ì‚¬ê°í˜•ì„ ì±„ìš¸ë•Œ ì‚¬ìš©ëœë‹¤.
 	HBRUSH hBrush, hOldBrush;
 
 	int x, y;
 
-	// ÃÊ·Ï»ö Ææ
+	// ì´ˆë¡ìƒ‰ íŽœ
 	hPen = CreatePen(PS_SOLID, 1, RGB(255, 215, 0));
-	// °ËÁ¤»ö ºê·¯½¬ (¹è°æ »ö»óÀ¸·Î ¼ÂÆÃ)
+	// ê²€ì •ìƒ‰ ë¸ŒëŸ¬ì‰¬ (ë°°ê²½ ìƒ‰ìƒìœ¼ë¡œ ì…‹íŒ…)
 	hBrush = CreateSolidBrush(RGB(0, 0, 0));
 
-	// À©µµ¿ì Å¬¶óÀÌ¾ðÆ® ¿µ¿ªÀÇ µð½ºÇÃ·¹ÀÌ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®(DC) ÇÚµéÀ» ±¸ÇØ¼­ ¹ÝÈ¯ÇÑ´Ù.
+	// ìœˆë„ìš° í´ë¼ì´ì–¸íŠ¸ ì˜ì—­ì˜ ë””ìŠ¤í”Œë ˆì´ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸(DC) í•¸ë“¤ì„ êµ¬í•´ì„œ ë°˜í™˜í•œë‹¤.
 	hDC = GetDC(g_hWnd);
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ Ææ ÇÚµéÀ» ´ëÀÔ.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— íŽœ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldPen = (HPEN)SelectObject(hDC, hPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ ºê·¯½¬ ÇÚµéÀ» ´ëÀÔ.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— ë¸ŒëŸ¬ì‰¬ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldBrush = (HBRUSH)SelectObject(hDC, hBrush);
 
-	// ÇØ´ç À§Ä¡¿¡ ÇØ´ç Å©±â·Î »ç°¢ÇüÀ» Ãâ·ÂÇÑ´Ù.
+	// í•´ë‹¹ ìœ„ì¹˜ì— í•´ë‹¹ í¬ê¸°ë¡œ ì‚¬ê°í˜•ì„ ì¶œë ¥í•œë‹¤.
 	Rectangle(hDC, 440, 90, 580, 220);
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldBrush);
 
-	// Ææ, ºê·¯½¬ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	// íŽœ, ë¸ŒëŸ¬ì‰¬ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteObject(hPen);
 	DeleteObject(hBrush);
 
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¹Ý³³ÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ë°˜ë‚©í•œë‹¤.
 	ReleaseDC(g_hWnd, hDC);
 
-	// ´ÙÀ½ ºí·ÏÀ» ±×¸°´Ù.
-	// ÆÄ¶õ»ö Ææ
+	// ë‹¤ìŒ ë¸”ë¡ì„ ê·¸ë¦°ë‹¤.
+	// íŒŒëž€ìƒ‰ íŽœ
 	hPen = CreatePen(PS_SOLID, 1, RGB(65, 105, 255));
-	// ÁÖÈ²»ö ºê·¯½¬
+	// ì£¼í™©ìƒ‰ ë¸ŒëŸ¬ì‰¬
 	hBrush = CreateSolidBrush(RGB(255, 165, 0));
 
-	// À©µµ¿ì Å¬¶óÀÌ¾ðÆ® ¿µ¿ªÀÇ µð½ºÇÃ·¹ÀÌ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®(DC) ÇÚµéÀ» ±¸ÇØ¼­ ¹ÝÈ¯ÇÑ´Ù.
+	// ìœˆë„ìš° í´ë¼ì´ì–¸íŠ¸ ì˜ì—­ì˜ ë””ìŠ¤í”Œë ˆì´ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸(DC) í•¸ë“¤ì„ êµ¬í•´ì„œ ë°˜í™˜í•œë‹¤.
 	hDC = GetDC(g_hWnd);
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ Ææ ÇÚµéÀ» ´ëÀÔ.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— íŽœ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldPen = (HPEN)SelectObject(hDC, hPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ ºê·¯½¬ ÇÚµéÀ» ´ëÀÔ.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— ë¸ŒëŸ¬ì‰¬ í•¸ë“¤ì„ ëŒ€ìž….
 	hOldBrush = (HBRUSH)SelectObject(hDC, hBrush);
 
-	// ¾Æ·¡ µÎ ¹Ýº¹¹®Àº ºí·ÏÀÇ °ªÀ» °Ë»çÇÑ´Ù.
-	for(int row = 0; row < 4; row++) // Çà
-		for (int col = 0; col < 4; col++) // ¿­
+	// ì•„ëž˜ ë‘ ë°˜ë³µë¬¸ì€ ë¸”ë¡ì˜ ê°’ì„ ê²€ì‚¬í•œë‹¤.
+	for(int row = 0; row < 4; row++) // í–‰
+		for (int col = 0; col < 4; col++) // ì—´
 		{
-			// ¸¸¾à ¹è¿­ÀÇ °ªÀÌ 1ÀÌ¸é...
-			if (Block[NextBlockNum][RotateNum][row][col]) // BlockNum´Â ºí·ÏÀÇ Á¾·ù, RotateNum´Â ºí·ÏÀÇ È¸Àü Á¾·ù (==1 ¾ø¾îµµ °°Àº ÀÇ¹ÌÀÌ´Ù. Áï true´Â 1)
+			// ë§Œì•½ ë°°ì—´ì˜ ê°’ì´ 1ì´ë©´...
+			if (Block[NextBlockNum][RotateNum][row][col]) // BlockNumëŠ” ë¸”ë¡ì˜ ì¢…ë¥˜, RotateNumëŠ” ë¸”ë¡ì˜ íšŒì „ ì¢…ë¥˜ (==1 ì—†ì–´ë„ ê°™ì€ ì˜ë¯¸ì´ë‹¤. ì¦‰ trueëŠ” 1)
 			{
-				// ºí·ÏÀÇ À§Ä¡¸¦ ¼ÂÆÃ (»ç°¢ºí·Ï ÇÏ³ªÀÇ Å©±â°¡ 20ÀÌ´Ï *20 ÇØÁØ´Ù)
-				x = 470 + col * 20;		 // À©µµ¿ì x Ãà ¹æÇâÀ¸·Î 470(±âº») À§Ä¡·Î Ãâ·Â
-				y = 110 + row * 20;       // À©µµ¿ì y Ãà ¹æÇâÀ¸·Î  110(±âº») À§Ä¡·Î Ãâ·Â
-				// ÇØ´ç À§Ä¡¿¡ ÇØ´ç Å©±â·Î(20) »ç°¢ÇüÀ» Ãâ·ÂÇÑ´Ù.
+				// ë¸”ë¡ì˜ ìœ„ì¹˜ë¥¼ ì…‹íŒ… (ì‚¬ê°ë¸”ë¡ í•˜ë‚˜ì˜ í¬ê¸°ê°€ 20ì´ë‹ˆ *20 í•´ì¤€ë‹¤)
+				x = 470 + col * 20;		 // ìœˆë„ìš° x ì¶• ë°©í–¥ìœ¼ë¡œ 470(ê¸°ë³¸) ìœ„ì¹˜ë¡œ ì¶œë ¥
+				y = 110 + row * 20;       // ìœˆë„ìš° y ì¶• ë°©í–¥ìœ¼ë¡œ  110(ê¸°ë³¸) ìœ„ì¹˜ë¡œ ì¶œë ¥
+				// í•´ë‹¹ ìœ„ì¹˜ì— í•´ë‹¹ í¬ê¸°ë¡œ(20) ì‚¬ê°í˜•ì„ ì¶œë ¥í•œë‹¤.
 				Rectangle(hDC, x, y, x + 20, y + 20);
 			}
 		}
 
-	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldPen);
-	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hDC, hOldBrush);
 
-	// Ææ, ºê·¯½¬ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	// íŽœ, ë¸ŒëŸ¬ì‰¬ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteObject(hPen);
 	DeleteObject(hBrush);
 
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¹Ý³³ÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ë°˜ë‚©í•œë‹¤.
 	ReleaseDC(g_hWnd, hDC);
 }
 
-// ÇöÀç ºí·ÏÀ» ÀúÀåÇÑ´Ù. ¢º
+// í˜„ìž¬ ë¸”ë¡ì„ ì €ìž¥í•œë‹¤. â–¶
 void Hold(void)
 {
-	// ¸¸¾à ÀÌ¹ø ÅÏ¿¡ ÀúÀåÀÌ »ç¿ëµÇ¾ú´Ù¸é, ¢¹
+	// ë§Œì•½ ì´ë²ˆ í„´ì— ì €ìž¥ì´ ì‚¬ìš©ë˜ì—ˆë‹¤ë©´, â–·
 	if (isHoldUsed) 
 		return;
 
-	// ¸¸¾à ÀúÀåµÈ ºí·ÏÀÌ ¾ø´Ù¸é, ¢¹
+	// ë§Œì•½ ì €ìž¥ëœ ë¸”ë¡ì´ ì—†ë‹¤ë©´, â–·
 	if (!hasBlockHold) 
-	{ // ÇöÀç ºí·ÏÀ» ÀúÀå¿¡ ³Ö°í ¢¹
+	{ // í˜„ìž¬ ë¸”ë¡ì„ ì €ìž¥ì— ë„£ê³  â–·
 		holdBlockNum = BlockNum; 
-		// ±× À§Ä¡¸¦ ÇÑ ¹ø ½Ï Áö¿î ÈÄ¿¡ ¢¹
+		// ê·¸ ìœ„ì¹˜ë¥¼ í•œ ë²ˆ ì‹¹ ì§€ìš´ í›„ì— â–·
 		EraseBlock();
-		// Ghostºí·Ïµµ ¸¶Âù°¡Áö ¢¹
+		// Ghostë¸”ë¡ë„ ë§ˆì°¬ê°€ì§€ â–·
 		EraseGhostBlock();
-		// ´ÙÀ½ ºí·ÏÀ» ÇöÀç ºí·ÏÀ¸·Î ±³Ã¼ ¢¹
+		// ë‹¤ìŒ ë¸”ë¡ì„ í˜„ìž¬ ë¸”ë¡ìœ¼ë¡œ êµì²´ â–·
 		BlockNum = NextBlockNum; 
-		// À§Ä¡´Â ¸Ç À§·Î ÃÊ±âÈ­ ¢¹
+		// ìœ„ì¹˜ëŠ” ë§¨ ìœ„ë¡œ ì´ˆê¸°í™” â–·
 		NowX = 3;
 		NowY = 0;
 		RotateNum = 0;
@@ -1153,26 +1153,26 @@ void Hold(void)
 		
 		hasBlockHold = TRUE; 
 	}
-	else // ÀúÀåµÈ ºí·ÏÀÌ ÀÖ´Ù¸é, 
+	else // ì €ìž¥ëœ ë¸”ë¡ì´ ìžˆë‹¤ë©´, 
 	{ 
-		// ÀúÀåµÈ ºí·ÏÀ» ²¨³» Ãâ·Â, (¼øÈ¯) ±³Ã¼ ¢¹
+		// ì €ìž¥ëœ ë¸”ë¡ì„ êº¼ë‚´ ì¶œë ¥, (ìˆœí™˜) êµì²´ â–·
 		int temp = BlockNum;
-		// ºí·ÏÀÇ ÀÜ»óÀ» Áö¿ò ¢¹
+		// ë¸”ë¡ì˜ ìž”ìƒì„ ì§€ì›€ â–·
 		EraseBlock();
 		EraseGhostBlock();
-		// ÀúÀåµÈ ºí·ÏÀ» ÇöÀç ºí·ÏÀ¸·Î ¿Å±è ¢¹
+		// ì €ìž¥ëœ ë¸”ë¡ì„ í˜„ìž¬ ë¸”ë¡ìœ¼ë¡œ ì˜®ê¹€ â–·
 		BlockNum = holdBlockNum;
 		holdBlockNum = temp;
-		// ºí·Ï »ý¼º À§Ä¡ ÃÊ±âÈ­ ¢¹
+		// ë¸”ë¡ ìƒì„± ìœ„ì¹˜ ì´ˆê¸°í™” â–·
 		NowX = 3;
 		NowY = 0;
 		RotateNum = 0;
-		// ºí·Ï ´Ù½Ã ±×¸®±â ¢¹ 
+		// ë¸”ë¡ ë‹¤ì‹œ ê·¸ë¦¬ê¸° â–· 
 		DrawGhostBlock();
 		DrawBlock();
 	}
 	
-	// ÀúÀåÀÌ »ç¿ëµÊ ¢¹
+	// ì €ìž¥ì´ ì‚¬ìš©ë¨ â–·
 	isHoldUsed = TRUE;
 
 	HDC hDC;
@@ -1181,7 +1181,7 @@ void Hold(void)
 
 	int x, y;
 
-	// ¹è°æÀ» ÇÑ ¹ø Áö¿ò ¢¹
+	// ë°°ê²½ì„ í•œ ë²ˆ ì§€ì›€ â–·
 	hPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
 	hBrush = CreateSolidBrush(RGB(0, 0, 0));
 
@@ -1198,7 +1198,7 @@ void Hold(void)
 	DeleteObject(hPen);
 	DeleteObject(hBrush);
 
-	// ¸¸¾à ÀúÀåµÈ ºí·ÏÀÌ ÀÖÀ» °æ¿ì ºí·Ï ±×¸®±â ¢¹
+	// ë§Œì•½ ì €ìž¥ëœ ë¸”ë¡ì´ ìžˆì„ ê²½ìš° ë¸”ë¡ ê·¸ë¦¬ê¸° â–·
 	if (hasBlockHold)
 	{
 		hPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
@@ -1230,199 +1230,199 @@ void Hold(void)
 	}
 }
 
-// ºí·ÏÀÌ ÀÌµ¿ °¡´ÉÇÑÁö ¿©ºÎ Ã¼Å©
+// ë¸”ë¡ì´ ì´ë™ ê°€ëŠ¥í•œì§€ ì—¬ë¶€ ì²´í¬
 BOOL BlockCanMove(int x, int y)
 {
-	// Ã¼Å© º¯¼ö
+	// ì²´í¬ ë³€ìˆ˜
 	int check = 0;
 
-	// ¿­, Çà
+	// ì—´, í–‰
 	int row, col;
 
-	// ¾Æ·¡ µÎ ¹Ýº¹¹®Àº ºí·ÏÀÇ °ªÀ» °Ë»çÇÑ´Ù.
-	for (row = 0; row < 4; row++) // Çà
-		for (col = 0; col < 4; col++) // ¿­
-			if (Block[BlockNum][RotateNum][row][col]) // BlockNum´Â ºí·ÏÀÇ Á¾·ù, RotateNum´Â ºí·ÏÀÇ È¸Àü Á¾·ù (==1 ¾ø¾îµµ °°Àº ÀÇ¹ÌÀÌ´Ù. Áï true´Â 1)
-				check += BackGround[y + row][x + col + 1]; // ºí·ÏÀÌ ¹è°æ °æ°è¿¡ °É¸±¶§...Ã¼Å© º¯¼ö 1 Ãß°¡
+	// ì•„ëž˜ ë‘ ë°˜ë³µë¬¸ì€ ë¸”ë¡ì˜ ê°’ì„ ê²€ì‚¬í•œë‹¤.
+	for (row = 0; row < 4; row++) // í–‰
+		for (col = 0; col < 4; col++) // ì—´
+			if (Block[BlockNum][RotateNum][row][col]) // BlockNumëŠ” ë¸”ë¡ì˜ ì¢…ë¥˜, RotateNumëŠ” ë¸”ë¡ì˜ íšŒì „ ì¢…ë¥˜ (==1 ì—†ì–´ë„ ê°™ì€ ì˜ë¯¸ì´ë‹¤. ì¦‰ trueëŠ” 1)
+				check += BackGround[y + row][x + col + 1]; // ë¸”ë¡ì´ ë°°ê²½ ê²½ê³„ì— ê±¸ë¦´ë•Œ...ì²´í¬ ë³€ìˆ˜ 1 ì¶”ê°€
 
-	// ÀÌµ¿ °¡´É
+	// ì´ë™ ê°€ëŠ¥
 	if (check == 0)
 		return YES;
-	// ÀÌµ¿ ºÒ°¡´É
+	// ì´ë™ ë¶ˆê°€ëŠ¥
 	else
 		return NO;
 }
 
-// ºí·Ï ÁÂÃø ÀÌµ¿.
+// ë¸”ë¡ ì¢Œì¸¡ ì´ë™.
 void LeftMove()
 {
-	// ÇÃ·¹ÀÌ¾î°¡ Á×¾úÀ»¶§
+	// í”Œë ˆì´ì–´ê°€ ì£½ì—ˆì„ë•Œ
 	if (PlayerState == DEAD)
 		return;
 
-	// ±×·¸Áö ¾Ê´Ù¸é ºí·Ï ÁÂÃø ÀÌµ¿
+	// ê·¸ë ‡ì§€ ì•Šë‹¤ë©´ ë¸”ë¡ ì¢Œì¸¡ ì´ë™
 	if (BlockCanMove(NowX - 1, NowY))
 	{
-		// ºí·ÏÀ» Áö¿ì°í
+		// ë¸”ë¡ì„ ì§€ìš°ê³ 
 		EraseBlock();
-		// Ghostºí·ÏÀ» Áö¿î ÈÄ ¢¹
+		// Ghostë¸”ë¡ì„ ì§€ìš´ í›„ â–·
 		EraseGhostBlock();
-		// ºí·Ï À§Ä¡ ÀÌµ¿ ½ÃÅ°°í
+		// ë¸”ë¡ ìœ„ì¹˜ ì´ë™ ì‹œí‚¤ê³ 
 		NowX--;
-		// Ghost ºí·ÏÀ» ´Ù½Ã ±×¸®°í ¢¹
+		// Ghost ë¸”ë¡ì„ ë‹¤ì‹œ ê·¸ë¦¬ê³  â–·
 		DrawGhostBlock();
-		// Ghostºí·ÏÀÇ yÁÂÇ¥¸¦ ÀÌÀü ÁÂÇ¥¿¡ ´ëÀÔ ¢¹
+		// Ghostë¸”ë¡ì˜ yì¢Œí‘œë¥¼ ì´ì „ ì¢Œí‘œì— ëŒ€ìž… â–·
 		PreGhostY = GhostY;
-		// ºí·ÏÀ» ¸¶Áö¸·¿¡ ´Ù½Ã ±×¸°´Ù.
+		// ë¸”ë¡ì„ ë§ˆì§€ë§‰ì— ë‹¤ì‹œ ê·¸ë¦°ë‹¤.
 		DrawBlock();
 	}
 }
 
-// ºí·Ï ¿ìÃø ÀÌµ¿.
+// ë¸”ë¡ ìš°ì¸¡ ì´ë™.
 void RightMove()
 {
-	// ÇÃ·¹ÀÌ¾î°¡ Á×¾úÀ»¶§
+	// í”Œë ˆì´ì–´ê°€ ì£½ì—ˆì„ë•Œ
 	if (PlayerState == DEAD)
 		return;
 
-	// ±×·¸Áö ¾Ê´Ù¸é ºí·Ï ¿ìÃø ÀÌµ¿
+	// ê·¸ë ‡ì§€ ì•Šë‹¤ë©´ ë¸”ë¡ ìš°ì¸¡ ì´ë™
 	if (BlockCanMove(NowX + 1, NowY))
 	{
-		// ºí·ÏÀ» Áö¿ì°í
+		// ë¸”ë¡ì„ ì§€ìš°ê³ 
 		EraseBlock();
-		// Ghostºí·ÏÀ» Áö¿î ÈÄ ¢¹
+		// Ghostë¸”ë¡ì„ ì§€ìš´ í›„ â–·
 		EraseGhostBlock();
-		// ºí·Ï À§Ä¡ ÀÌµ¿ ½ÃÅ°°í
+		// ë¸”ë¡ ìœ„ì¹˜ ì´ë™ ì‹œí‚¤ê³ 
 		NowX++;
-		// Ghost ºí·ÏÀ» ´Ù½Ã ±×¸®°í ¢¹
+		// Ghost ë¸”ë¡ì„ ë‹¤ì‹œ ê·¸ë¦¬ê³  â–·
 		DrawGhostBlock();
-		// Ghostºí·ÏÀÇ yÁÂÇ¥¸¦ ÀÌÀü ÁÂÇ¥¿¡ ´ëÀÔ ¢¹
+		// Ghostë¸”ë¡ì˜ yì¢Œí‘œë¥¼ ì´ì „ ì¢Œí‘œì— ëŒ€ìž… â–·
 		PreGhostY = GhostY;
-		// ºí·ÏÀ» ¸¶Áö¸·¿¡ ´Ù½Ã ±×¸°´Ù.
+		// ë¸”ë¡ì„ ë§ˆì§€ë§‰ì— ë‹¤ì‹œ ê·¸ë¦°ë‹¤.
 		DrawBlock();
 	}
 }
 
-// ºí·Ï È¸Àü ÇÔ¼ö
+// ë¸”ë¡ íšŒì „ í•¨ìˆ˜
 void Rotate()
 {
-	// ÇÃ·¹ÀÌ¾î°¡ Á×¾úÀ»¶§
+	// í”Œë ˆì´ì–´ê°€ ì£½ì—ˆì„ë•Œ
 	if (PlayerState == DEAD)
 		return;
 
-	// ÇöÀç °ª ÀÓ½Ã º¯¼ö¿¡ ³ÖÀÚ
+	// í˜„ìž¬ ê°’ ìž„ì‹œ ë³€ìˆ˜ì— ë„£ìž
 	int temp = RotateNum;
-	// RotateNum °ª 1 Áõ°¡
+	// RotateNum ê°’ 1 ì¦ê°€
 	RotateNum++;
-	// º¯¼öÀÇ ÇÑ°è °ªÀ» 3±îÁö¸¸ °®±â À§ÇÔ(if ¾È½áµµ µÊ ½ºÅ³ÀÌ´Ï ±â¾ïÇØµÎ±æ)
+	// ë³€ìˆ˜ì˜ í•œê³„ ê°’ì„ 3ê¹Œì§€ë§Œ ê°–ê¸° ìœ„í•¨(if ì•ˆì¨ë„ ë¨ ìŠ¤í‚¬ì´ë‹ˆ ê¸°ì–µí•´ë‘ê¸¸)
 	RotateNum %= 4;
 
-	// È¸ÀüÀÌ °¡´É ÇÏ¸é
+	// íšŒì „ì´ ê°€ëŠ¥ í•˜ë©´
 	if (BlockCanMove(NowX, NowY))
 	{
-		// º¹±¸
+		// ë³µêµ¬
 		RotateNum = temp;
-		// ºí·ÏÀ» Áö¿ì°í
+		// ë¸”ë¡ì„ ì§€ìš°ê³ 
 		EraseBlock();
-		// Ghostºí·ÏÀ» Áö¿î ÈÄ ¢¹
+		// Ghostë¸”ë¡ì„ ì§€ìš´ í›„ â–·
 		EraseGhostBlock();
-		// RotateNum °ª 1 Áõ°¡
+		// RotateNum ê°’ 1 ì¦ê°€
 		RotateNum++;
-		// º¯¼öÀÇ ÇÑ°è °ªÀ» 3±îÁö¸¸ °®±â À§ÇÔ(if ¾È½áµµ µÊ ½ºÅ³ÀÌ´Ï ±â¾ïÇØµÎ±æ)
+		// ë³€ìˆ˜ì˜ í•œê³„ ê°’ì„ 3ê¹Œì§€ë§Œ ê°–ê¸° ìœ„í•¨(if ì•ˆì¨ë„ ë¨ ìŠ¤í‚¬ì´ë‹ˆ ê¸°ì–µí•´ë‘ê¸¸)
 		RotateNum %= 4;
-		// Ghost ºí·ÏÀ» ´Ù½Ã ±×¸®°í ¢¹
+		// Ghost ë¸”ë¡ì„ ë‹¤ì‹œ ê·¸ë¦¬ê³  â–·
 		DrawGhostBlock();
-		// Ghostºí·ÏÀÇ yÁÂÇ¥¸¦ ÀÌÀü ÁÂÇ¥¿¡ ´ëÀÔ ¢¹
+		// Ghostë¸”ë¡ì˜ yì¢Œí‘œë¥¼ ì´ì „ ì¢Œí‘œì— ëŒ€ìž… â–·
 		PreGhostY = GhostY;
-		// È¸ÀüÇÑ ºí·Ï ±×¸®±â
+		// íšŒì „í•œ ë¸”ë¡ ê·¸ë¦¬ê¸°
 		DrawBlock();
 	}
-	// È¸ÀüÀÌ ºÒ°¡´É ÇÏ¸é º¹±¸
+	// íšŒì „ì´ ë¶ˆê°€ëŠ¥ í•˜ë©´ ë³µêµ¬
 	else
 		RotateNum = temp;
 }
 
-// ºí·Ï ´Ù¿î ÇÔ¼ö
+// ë¸”ë¡ ë‹¤ìš´ í•¨ìˆ˜
 BOOL DownMove()
 {
-	// ÇÃ·¹ÀÌ¾î°¡ Á×¾úÀ»¶§
+	// í”Œë ˆì´ì–´ê°€ ì£½ì—ˆì„ë•Œ
 	if (PlayerState == DEAD) return FAIL;
 
-	// ºí·ÏÀÌ ¾Æ·¡·Î ³»·Á °¥¼ö ÀÖ´Ù¸é(¹Ì¸® Ã¼Å©)
+	// ë¸”ë¡ì´ ì•„ëž˜ë¡œ ë‚´ë ¤ ê°ˆìˆ˜ ìžˆë‹¤ë©´(ë¯¸ë¦¬ ì²´í¬)
 	if (BlockCanMove(NowX, NowY + 1))
 	{
-		// ºí·ÏÀ» Áö¿ì°í
+		// ë¸”ë¡ì„ ì§€ìš°ê³ 
 		EraseBlock();
-		// Ghostºí·ÏÀ» Áö¿î ÈÄ ¢¹
+		// Ghostë¸”ë¡ì„ ì§€ìš´ í›„ â–·
 		EraseGhostBlock();
-		// ºí·Ï À§Ä¡ ÀÌµ¿ ½ÃÅ°°í
+		// ë¸”ë¡ ìœ„ì¹˜ ì´ë™ ì‹œí‚¤ê³ 
 		NowY++;
-		// Ghost ºí·ÏÀ» ´Ù½Ã ±×¸®°í ¢¹
+		// Ghost ë¸”ë¡ì„ ë‹¤ì‹œ ê·¸ë¦¬ê³  â–·
 		DrawGhostBlock();
-		// Ghostºí·ÏÀÇ yÁÂÇ¥¸¦ ÀÌÀü ÁÂÇ¥¿¡ ´ëÀÔ ¢¹
+		// Ghostë¸”ë¡ì˜ yì¢Œí‘œë¥¼ ì´ì „ ì¢Œí‘œì— ëŒ€ìž… â–·
 		PreGhostY = GhostY;
-		// ºí·ÏÀ» ´Ù½Ã ±×¸°´Ù.
+		// ë¸”ë¡ì„ ë‹¤ì‹œ ê·¸ë¦°ë‹¤.
 		DrawBlock();
 		return SUCCESS;
 	}
-	// ºí·ÏÀÌ ¾Æ·¡·Î ³»·Á °¥ ¼ö ¾ø´Ù¸é
+	// ë¸”ë¡ì´ ì•„ëž˜ë¡œ ë‚´ë ¤ ê°ˆ ìˆ˜ ì—†ë‹¤ë©´
 	else
 	{
-		// ¿òÁ÷ÀÏ¼ö ¾ø´Â ºí·ÏÀ» ¹è°æÀ¸·Î ¾÷µ¥ÀÌÆ®.
+		// ì›€ì§ì¼ìˆ˜ ì—†ëŠ” ë¸”ë¡ì„ ë°°ê²½ìœ¼ë¡œ ì—…ë°ì´íŠ¸.
 		UpdateBackGround();
-		// ¶óÀÎÀÌ ²Ë Â÷ÀÖ´ÂÁö °Ë»ç.(¹Ì¼Ç ¼º°øÀÎÁö °Ë»ç)
+		// ë¼ì¸ì´ ê½‰ ì°¨ìžˆëŠ”ì§€ ê²€ì‚¬.(ë¯¸ì…˜ ì„±ê³µì¸ì§€ ê²€ì‚¬)
 		CheckFullLine();
-		// ¸Þ½ÃÁö¸¦ ¹ß»ý ½ÃÅ²´Ù.(´ÙÀ½ ºí·Ï ÁøÇà)
+		// ë©”ì‹œì§€ë¥¼ ë°œìƒ ì‹œí‚¨ë‹¤.(ë‹¤ìŒ ë¸”ë¡ ì§„í–‰)
 		SendMessage(g_hWnd, WM_NewBlock, 0, 0);
 		return FAIL;
 	}
 }
 
-// ¿òÁ÷ÀÏ¼ö ¾ø´Â ºí·ÏÀ» ¹è°æÀ¸·Î ¾÷µ¥ÀÌÆ®.
+// ì›€ì§ì¼ìˆ˜ ì—†ëŠ” ë¸”ë¡ì„ ë°°ê²½ìœ¼ë¡œ ì—…ë°ì´íŠ¸.
 void UpdateBackGround()
 {
-	// ¿ä¼Ò º¯¼ö
+	// ìš”ì†Œ ë³€ìˆ˜
 	int element;
-	// ¾Æ·¡ µÎ ¹Ýº¹¹®Àº ºí·ÏÀÇ °ªÀ» °Ë»çÇÑ´Ù.
-	for (int row = 0; row < 4; row++) // Çà
-		for (int col = 0; col < 4; col++) // ¿­
+	// ì•„ëž˜ ë‘ ë°˜ë³µë¬¸ì€ ë¸”ë¡ì˜ ê°’ì„ ê²€ì‚¬í•œë‹¤.
+	for (int row = 0; row < 4; row++) // í–‰
+		for (int col = 0; col < 4; col++) // ì—´
 		{
-			// ÇöÀç ºí·ÏÀÇ ¿ä¼Ò °ªÀ» ÀúÀåÇÑ´Ù.
+			// í˜„ìž¬ ë¸”ë¡ì˜ ìš”ì†Œ ê°’ì„ ì €ìž¥í•œë‹¤.
 			element = Block[BlockNum][RotateNum][row][col];
-			// ¸¸¾à ÇöÀç ºí·Ï ¹è¿­ÀÇ °ªÀÌ 1 ÀÌ¸é, 
-			// ºí·Ï ¹è¿­ÀÇ °ªÀ» ºí·Ï ÇöÀç À§Ä¡ÀÇ ¹è°æÀ¸·Î ¾÷µ«~!.
+			// ë§Œì•½ í˜„ìž¬ ë¸”ë¡ ë°°ì—´ì˜ ê°’ì´ 1 ì´ë©´, 
+			// ë¸”ë¡ ë°°ì—´ì˜ ê°’ì„ ë¸”ë¡ í˜„ìž¬ ìœ„ì¹˜ì˜ ë°°ê²½ìœ¼ë¡œ ì—…ëŽƒ~!.
 			if (element)
 				BackGround[NowY + row][NowX + col + 1] = element;
 		}
 }
 
-// ÇÑÁÙ ¶Ç´Â ±× ÀÌ»ó ¹Ì¼ÇÀÌ ¼º°øÇß´ÂÁö Ã¼Å©  
+// í•œì¤„ ë˜ëŠ” ê·¸ ì´ìƒ ë¯¸ì…˜ì´ ì„±ê³µí–ˆëŠ”ì§€ ì²´í¬  
 void CheckFullLine()
 {
-	// Çà, ¿­, ¼º°ø ¶óÀÎ
+	// í–‰, ì—´, ì„±ê³µ ë¼ì¸
 	int row, col, line;
-	// ¹Ì¼Ç Ã¼Å© º¯¼ö
+	// ë¯¸ì…˜ ì²´í¬ ë³€ìˆ˜
 	int elementNum;
 
-	// ¹ÙÅÒºÎÅÍ °Ë»ö...
+	// ë°”í…€ë¶€í„° ê²€ìƒ‰...
 	for (row = 19; row >= 0; row--)
 	{
-		// ¹Ì¼Ç Ã¼Å© º¯¼ö ÃÊ±âÈ­
+		// ë¯¸ì…˜ ì²´í¬ ë³€ìˆ˜ ì´ˆê¸°í™”
 		elementNum = 0;
-		// ÇØ´ç ¿­, ÇàÀÇ ¹è°æ °ªÀ¸·Î elementNum º¯¼ö Áõ°¡
-		for (col = 1; col <= 10; col++) // ¢¹
+		// í•´ë‹¹ ì—´, í–‰ì˜ ë°°ê²½ ê°’ìœ¼ë¡œ elementNum ë³€ìˆ˜ ì¦ê°€
+		for (col = 1; col <= 10; col++) // â–·
 		{
 			if (BackGround[row][col] == 1)
 				elementNum++;
 		}
 		//	elementNum += BackGround[row][col];
 
-		// ºí·ÏÀÌ °¡µæ Ã¼¿öÁ® ÀÖ´ÂÁö °Ë»çÇÑ´Ù.
+		// ë¸”ë¡ì´ ê°€ë“ ì²´ì›Œì ¸ ìžˆëŠ”ì§€ ê²€ì‚¬í•œë‹¤.
 		if (elementNum == 10)
 		{
-			// ºí·ÏÀÌ °¡µæÂù ÁÙ »èÁ¦ ¢¹
+			// ë¸”ë¡ì´ ê°€ë“ì°¬ ì¤„ ì‚­ì œ â–·
 			EraseFullLine(row);
-			// »èÁ¦ ÇÒ ¶óÀÎ ¹Ù·Î À­ ¶óÀÎºÎÅÍ ¹é¾÷ ÇØµÎ°í~
+			// ì‚­ì œ í•  ë¼ì¸ ë°”ë¡œ ìœ— ë¼ì¸ë¶€í„° ë°±ì—… í•´ë‘ê³ ~
 			for (line = row; line > 0; line--)
 				for (col = 1; col <= 10; col++)
 				{
@@ -1430,57 +1430,57 @@ void CheckFullLine()
 						BackGround[line][col] = 0;
 					else
 						BackGround[line][col] = BackGround[line - 1][col];
-				} // ¢¹
+				} // â–·
 				//	BackGround[line][col] = BackGround[line - 1][col];
 
-			//// ÇÑÄ­ ³»·Á°¥°Å´Ï±ñ ¸Ç À­ÁÙ »èÁ¦(?)
+			//// í•œì¹¸ ë‚´ë ¤ê°ˆê±°ë‹ˆê¹ ë§¨ ìœ—ì¤„ ì‚­ì œ(?)
 			//for (col = 1; col <= 10; col++)
 			//{
 			//	if (BackGround[0][col] != 9)
 			//		BackGround[0][col] = 0;
-			//} // ¢¹ 
+			//} // â–· 
 			// BackGround[0][col] = 0;
 
-			// Á¡¼ö°¡ µÉ¼öµµ ÀÖ´Ù~(¹ÌÃ³¸®)(?)(¹Ì¼Ç)
+			// ì ìˆ˜ê°€ ë ìˆ˜ë„ ìžˆë‹¤~(ë¯¸ì²˜ë¦¬)(?)(ë¯¸ì…˜)
 			FullLineNum++;
-			// 2ÁÙ ÀÌ»óÀÌ ÀÖÀ» °æ¿ì¸¦ ´ëºñ
+			// 2ì¤„ ì´ìƒì´ ìžˆì„ ê²½ìš°ë¥¼ ëŒ€ë¹„
 			row++;
 		}
 	}
 }
 
-// ºí·ÏÀÌ °¡µæÂù ÁÙÀ» »èÁ¦ÇÏ´Â ÇÔ¼ö.(¶óÀÎÀ» Áö¿ì´Â ÇÔ¼ö)
+// ë¸”ë¡ì´ ê°€ë“ì°¬ ì¤„ì„ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜.(ë¼ì¸ì„ ì§€ìš°ëŠ” í•¨ìˆ˜)
 void EraseFullLine(int row)
 {
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ Á¤ÀÇÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ì •ì˜í•œë‹¤.
 	HDC hDC, hMemDC;
-	// ºñÆ®¸ÊÀÇ ÇÚµéÀ» ÁöÁ¤ÇÏ±â À§ÇÔ.
+	// ë¹„íŠ¸ë§µì˜ í•¸ë“¤ì„ ì§€ì •í•˜ê¸° ìœ„í•¨.
 	HBITMAP hBmp;
 
-	// ¹è°æ Á¦¿Ü ºí·Ï ½ÃÀÛÁ¡
+	// ë°°ê²½ ì œì™¸ ë¸”ë¡ ì‹œìž‘ì 
 	int Xlen = 200;
 
-	/* º¹»çÇÒ ¿µ¿ªÀÇ YlenÀº Á¦ÀÏ À§¿¡¼­ °¡µæÂù ¶óÀÎ ¹Ù·Î À§±îÁö
-	ÀÇ ±æÀÌÀÌ´Ù.
-	row´Â 0ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î row*10Àº full lineÀÇ ¹Ù·Î À§±îÁöÀÇ ±æÀÌ
-	ÀÌ´Ù.
-	Áï! full lineÀÌ 10¹øÂ° ÁÙÀÌ¶ó¸é ÀÌ ¶óÀÎÀÇ y ¿µ¿ªÀº
-	90~99ÀÌ´Ù. ÀÌ¶§ row=9ÀÌ°í º¹»çÇÒ ºÎºÐÀÇ y¿µ¿ªÀº 0~89±îÁö ÀÌ´Ù.*/
+	/* ë³µì‚¬í•  ì˜ì—­ì˜ Ylenì€ ì œì¼ ìœ„ì—ì„œ ê°€ë“ì°¬ ë¼ì¸ ë°”ë¡œ ìœ„ê¹Œì§€
+	ì˜ ê¸¸ì´ì´ë‹¤.
+	rowëŠ” 0ë¶€í„° ì‹œìž‘í•˜ë¯€ë¡œ row*10ì€ full lineì˜ ë°”ë¡œ ìœ„ê¹Œì§€ì˜ ê¸¸ì´
+	ì´ë‹¤.
+	ì¦‰! full lineì´ 10ë²ˆì§¸ ì¤„ì´ë¼ë©´ ì´ ë¼ì¸ì˜ y ì˜ì—­ì€
+	90~99ì´ë‹¤. ì´ë•Œ row=9ì´ê³  ë³µì‚¬í•  ë¶€ë¶„ì˜ yì˜ì—­ì€ 0~89ê¹Œì§€ ì´ë‹¤.*/
 
-	// ÇÑ¸¶µð·Î Ã¹ ¶óÀÎºÎÅÍ »èÁ¦ ¶óÀÎ Àü±îÁö ¶óÀÎÀÌ´Ù. (ZeroBase)(À­ ¸»ÀÌ Èûµé¸é ±×³É ÀÌ°Í¸¸ ±â¾ï)
+	// í•œë§ˆë””ë¡œ ì²« ë¼ì¸ë¶€í„° ì‚­ì œ ë¼ì¸ ì „ê¹Œì§€ ë¼ì¸ì´ë‹¤. (ZeroBase)(ìœ— ë§ì´ íž˜ë“¤ë©´ ê·¸ëƒ¥ ì´ê²ƒë§Œ ê¸°ì–µ)
 	int Ylen = row * 20;
 
-	// À©µµ¿ì Å¬¶óÀÌ¾ðÆ® ¿µ¿ªÀÇ µð½ºÇÃ·¹ÀÌ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®(DC) ÇÚµéÀ» ±¸ÇØ¼­ ¹ÝÈ¯ÇÑ´Ù.
+	// ìœˆë„ìš° í´ë¼ì´ì–¸íŠ¸ ì˜ì—­ì˜ ë””ìŠ¤í”Œë ˆì´ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸(DC) í•¸ë“¤ì„ êµ¬í•´ì„œ ë°˜í™˜í•œë‹¤.
 	hDC = GetDC(g_hWnd);
-	// ÁÖ¾îÁø µð¹ÙÀÌ½º¿Í È£È¯µÇ´Â ¸Þ¸ð¸® µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ »ý¼ºÇÑ´Ù.
+	// ì£¼ì–´ì§„ ë””ë°”ì´ìŠ¤ì™€ í˜¸í™˜ë˜ëŠ” ë©”ëª¨ë¦¬ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ìƒì„±í•œë‹¤.
 	hMemDC = CreateCompatibleDC(hDC);
-	// ºñÆ®¸ÊÀ» »ý¼ºÇÑ´Ù. 
-	hBmp = CreateCompatibleBitmap(hDC, 200, 400); // ÃæºÐÇÑ Å©±â·Î Àâ´Â´Ù.
-	// ºñÆ®¸ÊÀ» ¸Þ¸ð¸® µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+	// ë¹„íŠ¸ë§µì„ ìƒì„±í•œë‹¤. 
+	hBmp = CreateCompatibleBitmap(hDC, 200, 400); // ì¶©ë¶„í•œ í¬ê¸°ë¡œ ìž¡ëŠ”ë‹¤.
+	// ë¹„íŠ¸ë§µì„ ë©”ëª¨ë¦¬ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 	SelectObject(hMemDC, hBmp);
 
 	/*
-	 ÇÔ¼ö ¿øÇü
+	 í•¨ìˆ˜ ì›í˜•
 	BOOL BitBlt(
 	HDC hdcDest,
 	int nXDest,
@@ -1492,66 +1492,66 @@ void EraseFullLine(int row)
 	int nYSrc,
 	DWORD dwRop);
 
-	ÀÎ¼ö 
+	ì¸ìˆ˜ 
 	hdcDest
-	ÀÌ¹ÌÁö¸¦ Ãâ·ÂÇÒ À§Ä¡ÀÇ ÇÚµé.
+	ì´ë¯¸ì§€ë¥¼ ì¶œë ¥í•  ìœ„ì¹˜ì˜ í•¸ë“¤.
 
 	nXDest, nYDest
-	ÀÌ¹ÌÁö¸¦ Ãâ·ÂÇÒ À§Ä¡ÀÎ x, y ÁÂÇ¥.
+	ì´ë¯¸ì§€ë¥¼ ì¶œë ¥í•  ìœ„ì¹˜ì¸ x, y ì¢Œí‘œ.
 
 	nWidth, nHeight
-	¿øº» ÀÌ¹ÌÁöÀÇ ³Êºñ, ³ôÀÌ ÀÌ´Ù.
-	ÀÌ Å©±â¸¸Å­ ¿øº» ÀÌ¹ÌÁö¿¡¼­ Àß¶ó¿Í ±×¸°´Ù.
+	ì›ë³¸ ì´ë¯¸ì§€ì˜ ë„ˆë¹„, ë†’ì´ ì´ë‹¤.
+	ì´ í¬ê¸°ë§Œí¼ ì›ë³¸ ì´ë¯¸ì§€ì—ì„œ ìž˜ë¼ì™€ ê·¸ë¦°ë‹¤.
 
 	hdcSrc
-	ÀÌ¹ÌÁöÀÇ ÇÚµé.
+	ì´ë¯¸ì§€ì˜ í•¸ë“¤.
 
 	nXSrc, nYSrc
-	°¡Á®¿Ã ÀÌ¹ÌÁöÀÇ ½ÃÀÛÁöÁ¡ÀÎ x, yÁÂÇ¥ÀÌ´Ù.
-	ÀÌ À§Ä¡ºÎÅÍ nWidth, nHeight¸¸Å­ ÀÌ¹ÌÁö¸¦ Àß¶ó¿Â´Ù.
+	ê°€ì ¸ì˜¬ ì´ë¯¸ì§€ì˜ ì‹œìž‘ì§€ì ì¸ x, yì¢Œí‘œì´ë‹¤.
+	ì´ ìœ„ì¹˜ë¶€í„° nWidth, nHeightë§Œí¼ ì´ë¯¸ì§€ë¥¼ ìž˜ë¼ì˜¨ë‹¤.
 
 	dwRop
-	ÀÌ¹ÌÁöÀÇ Ãâ·Â ¹æ¹ý
+	ì´ë¯¸ì§€ì˜ ì¶œë ¥ ë°©ë²•
 
 	*/
 
-	// È­¸éÀÇ ÀÏºÎ¸¦ ¸Þ¸ð¸®·Î º¹»çÇÑ´Ù.
+	// í™”ë©´ì˜ ì¼ë¶€ë¥¼ ë©”ëª¨ë¦¬ë¡œ ë³µì‚¬í•œë‹¤.
 	BitBlt(hMemDC, 0, 0, Xlen, Ylen, hDC, 180, 0, SRCCOPY);
 
-	// ¸Þ¸ð¸®¿¡¼­ È­¸éÀÇ ´Ù¸¥ ºÎºÐÀ¸·Î º¹»çÇÑ´Ù.
-	// Áï! µÎ¹øÂ° ÁÙºÎÅÍ º¹»çÇÑ´Ù.
+	// ë©”ëª¨ë¦¬ì—ì„œ í™”ë©´ì˜ ë‹¤ë¥¸ ë¶€ë¶„ìœ¼ë¡œ ë³µì‚¬í•œë‹¤.
+	// ì¦‰! ë‘ë²ˆì§¸ ì¤„ë¶€í„° ë³µì‚¬í•œë‹¤.
 	BitBlt(hDC, 180, 20, Xlen, Ylen, hMemDC, 0, 0, SRCCOPY);
 
-	// (¸Þ¸ð¸®)µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®(DC)¸¦ ¾ø¾Ø´Ù
+	// (ë©”ëª¨ë¦¬)ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸(DC)ë¥¼ ì—†ì•¤ë‹¤
 	DeleteDC(hMemDC);
-	// µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¸¦ ¹Ý³³ÇÑ´Ù.
+	// ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ë¥¼ ë°˜ë‚©í•œë‹¤.
 	ReleaseDC(g_hWnd, hDC);
-	// °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	// ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteObject(hBmp);
 }
 
-//// Àå¾Ö¹° ºí·Ï ÇÔ¼ö 
-//void Obstacle(void)  //  Àå¾Ö¹° ºí·ÏÀÌ Á¦´ë·Î »öÄ¥µÇÁö ¾ÊÀ½ ¢¹ 
+//// ìž¥ì• ë¬¼ ë¸”ë¡ í•¨ìˆ˜ 
+//void Obstacle(void)  //  ìž¥ì• ë¬¼ ë¸”ë¡ì´ ì œëŒ€ë¡œ ìƒ‰ì¹ ë˜ì§€ ì•ŠìŒ â–· 
 //{
 //	int row = 19;
 //	int col;
 //
 //	HDC hDC = GetDC(g_hWnd);
 //
-//	// °ËÁ¤»ö Ææ (¹è°æ »ö»óÀ¸·Î Áö¿ò)
+//	// ê²€ì •ìƒ‰ íŽœ (ë°°ê²½ ìƒ‰ìƒìœ¼ë¡œ ì§€ì›€)
 //	HPEN hPen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
-//	// °ËÁ¤»ö ºê·¯½¬ (¹è°æ »ö»óÀ¸·Î Áö¿ò)
+//	// ê²€ì •ìƒ‰ ë¸ŒëŸ¬ì‰¬ (ë°°ê²½ ìƒ‰ìƒìœ¼ë¡œ ì§€ì›€)
 //	HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
-//	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ Ææ ÇÚµéÀ» ´ëÀÔ.
+//	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— íŽœ í•¸ë“¤ì„ ëŒ€ìž….
 //	HPEN hOldPen = (HPEN)SelectObject(hDC, hPen);
-//	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö°í ¹ÝÈ¯µÈ Àü¿¡ ºê·¯½¬ ÇÚµéÀ» ´ëÀÔ.
+//	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ê³  ë°˜í™˜ëœ ì „ì— ë¸ŒëŸ¬ì‰¬ í•¸ë“¤ì„ ëŒ€ìž….
 //	HBRUSH hOldBrush = (HBRUSH)SelectObject(hDC, hBrush);
 //
-//	// ÆæÀ» µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+//	// íŽœì„ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 //	SelectObject(hDC, hOldPen);
-//	// ºê·¯½¬¸¦ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®¿¡ ³Ö´Â´Ù.
+//	// ë¸ŒëŸ¬ì‰¬ë¥¼ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 //	SelectObject(hDC, hOldBrush);
-//	// Ææ, ºê·¯½¬ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+//	// íŽœ, ë¸ŒëŸ¬ì‰¬ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 //	DeleteObject(hPen);
 //	DeleteObject(hBrush);
 //
@@ -1580,7 +1580,7 @@ void EraseFullLine(int row)
 //		ReleaseDC(g_hWnd, hDC);
 //}
 
-//void InitObstacle(void) // ¢¹ Àå¾Ö¹° ºí·Ï ÃÊ±âÈ­
+//void InitObstacle(void) // â–· ìž¥ì• ë¬¼ ë¸”ë¡ ì´ˆê¸°í™”
 //{
 //	int row, col;
 //	for (row = 1; row <= 19; row++)
